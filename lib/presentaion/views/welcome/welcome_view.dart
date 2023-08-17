@@ -13,35 +13,38 @@ class WelcomeView extends StatelessWidget {
         children: [
           Image.asset(
             ImagePath.welcome,
-            fit: BoxFit.cover,
+            fit: BoxFit.fill,
             width: 720,
             height: 941,
           ),
           Align(
             alignment: Alignment.centerRight,
-            child: ElevatedButton(
-              onPressed: () {},
-              child: Text("SignUp"),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: ColorManager.primaryMainColor,
-                textStyle: TextStyle(fontSize: 22, color: Colors.white),
-              ),
-            ),
-          ),
-          Positioned(
-            top: 424,
-            right: 11,
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              child: ElevatedButton(
-                onPressed: () {},
-                child: Text("Login"),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: ColorManager.primaryMainEnableColor,
-                  textStyle: TextStyle(fontSize: 22, color: Colors.white),
-                ),
-              ),
-            ),
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: const Size(120, 40),
+                      backgroundColor: ColorManager.primaryMainColor,
+                      textStyle:
+                          const TextStyle(fontSize: 22, color: Colors.white),
+                    ),
+                    child: const Text("Sign up"),
+                  ),
+                  const SizedBox(height: 2),
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: const Size(120, 40),
+                      backgroundColor: ColorManager.primaryMainEnableColor,
+                      textStyle:
+                          const TextStyle(fontSize: 22, color: Colors.white),
+                    ),
+                    child: const Text("Sign in"),
+                  ),
+                ]),
           ),
         ],
       ),
