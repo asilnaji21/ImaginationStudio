@@ -20,31 +20,21 @@ class WelcomeView extends StatelessWidget {
           Align(
             alignment: Alignment.centerRight,
             child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(120, 40),
-                      backgroundColor: ColorManager.primaryMainColor,
-                      textStyle:
-                          const TextStyle(fontSize: 22, color: Colors.white),
-                    ),
-                    child: const Text("Sign up"),
-                  ),
-                  const SizedBox(height: 2),
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(120, 40),
-                      backgroundColor: ColorManager.primaryMainEnableColor,
-                      textStyle:
-                          const TextStyle(fontSize: 22, color: Colors.white),
-                    ),
-                    child: const Text("Sign in"),
-                  ),
-                ]),
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                BaseButton(
+                  buttonText: "Sign up",
+                  onPressed: () {},
+                ),
+                const SizedBox(height: 2),
+                BaseButton(
+                  buttonText: "Sign in",
+                  buttonColor: ColorManager.primaryMainEnableColor,
+                  onPressed: () {},
+                )
+              ],
+            ),
           ),
         ],
       ),
