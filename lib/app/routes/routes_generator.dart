@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_app/app/routes/route_constants.dart';
+import 'package:project_app/presentaion/views/signup/signup_view.dart';
 
 import '../../presentaion/views/signin/signin_view.dart';
 import '../../presentaion/views/welcome/welcome_view.dart';
@@ -16,6 +17,10 @@ class RouteGenerator {
       case RouteConstants.signInRoute:
         return MaterialPageRoute(
           builder: (context) => SignInView(),
+        );
+      case RouteConstants.signUpRoute:
+        return MaterialPageRoute(
+          builder: (context) => SignUpView(),
         );
     }
 
