@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'app/routes/route_constants.dart';
 import 'app/routes/routes_generator.dart';
 
@@ -12,10 +11,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  MaterialApp(
       theme: ThemeData(
         fontFamily: "Aldhabi",
-        appBarTheme: const AppBarTheme(
+        appBarTheme: const  AppBarTheme(
             backgroundColor: Colors.transparent, elevation: 0),
       ),
       debugShowCheckedModeBanner: false,
