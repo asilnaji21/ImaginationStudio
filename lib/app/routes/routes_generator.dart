@@ -42,6 +42,10 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (context) => const MainView(),
         );
+      case RouteConstants.homeRoute:
+        return MaterialPageRoute(
+          builder: (context) => const HomeView(),
+        );
     }
 
     return unDefineRoute();
