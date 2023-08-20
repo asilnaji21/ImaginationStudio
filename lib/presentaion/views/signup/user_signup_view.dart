@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
 
+import '../../../app/routes/route_constants.dart';
+import '../../resources/color_manager.dart';
+import '../../resources/image_assets.dart';
+import '../../widgets/ElevatedButton_custom.dart';
+import '../../widgets/avatar_cam.dart';
+import '../../widgets/text_custom.dart';
+import '../../widgets/textbutton_custom.dart';
+import '../../widgets/textformfiled_custom.dart';
+
 class UserSignUpView extends StatelessWidget {
   const UserSignUpView({super.key});
   @override
@@ -20,19 +29,17 @@ Container customBackground({required Widget child, double? top}) {
           fit: BoxFit.fill,
         ),
       ),
-      child: Expanded(
-        child: Container(
-            margin: const EdgeInsets.only(top: 250),
-            decoration: const BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(40),
-                topRight: Radius.circular(40),
-              ),
+      child: Container(
+          margin: const EdgeInsets.only(top: 250),
+          decoration: const BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(40),
+              topRight: Radius.circular(40),
             ),
-            padding: EdgeInsets.only(top: top ?? 30.0, left: 50, right: 50),
-            child: child),
-      ));
+          ),
+          padding: EdgeInsets.only(top: top ?? 30.0, left: 50, right: 50),
+          child: child));
 }
 
 class UserSignUpBody extends StatelessWidget {
