@@ -61,7 +61,7 @@ class SignInView extends StatelessWidget {
                 width: 350,
               ),
               const SizedBox(
-                height: 28,
+                height: 190,
               ),
               /*   CustomTextButton(
                 onPressed: () {
