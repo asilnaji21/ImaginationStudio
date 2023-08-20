@@ -16,7 +16,7 @@ class WelcomeView extends StatelessWidget {
         children: [
           Image.asset(
             ImagePath.welcome,
-            fit: BoxFit.cover,
+            fit: BoxFit.fill,
             width: 720,
             height: 941,
           ),

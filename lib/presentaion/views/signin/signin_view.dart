@@ -12,9 +12,9 @@ class SignInView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 51, vertical: 220),
+      body: customBackground(
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
           child: Column(
             children: [
               CustomText(text: "Email"),
@@ -23,7 +23,7 @@ class SignInView extends StatelessWidget {
                 nameText: "Enter Email",
               ),
               const SizedBox(
-                height: 33,
+                height: 18,
               ),
               CustomText(text: "Password"),
               CustomTextFormField(
@@ -31,32 +31,44 @@ class SignInView extends StatelessWidget {
                 nameText: "*******",
               ),
               const SizedBox(
-                height: 20,
+                height: 10,
               ),
-              const Align(
+              Align(
                   alignment: Alignment.bottomRight,
-                  child: Text(
-                    "forgot Password?",
-                    style: TextStyle(
-                        color: Colors.grey, fontWeight: FontWeight.bold),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.of(context)
+                          .pushNamed(RouteConstants.resetPassRoute);
+                    },
+                    child: const Text(
+                      "forgot Password?",
+                      style: TextStyle(
+                        fontSize: 25,
+                        color: Colors.grey,
+                      ),
+                    ),
                   )),
               const SizedBox(
-                height: 28,
+                height: 15,
               ),
               CustomElevatedButton(
-                text: "signin",
+                onPressed: () {
+                  Navigator.of(context).pushNamed(RouteConstants.mainRoute);
+                },
+                text: "Sign in",
                 color: ColorManager.primaryMainEnableColor,
                 colortext: ColorManager.textColor,
+                width: 350,
               ),
               const SizedBox(
                 height: 28,
               ),
-              CustomTextButton(
+              /*   CustomTextButton(
                 onPressed: () {
                   Navigator.of(context).pushNamed(RouteConstants.signUpRoute);
                 },
                 text: 'Or Sign up by',
-              )
+              )*/
             ],
           ),
         ),
@@ -64,4 +76,3 @@ class SignInView extends StatelessWidget {
     );
   }
 }
-
