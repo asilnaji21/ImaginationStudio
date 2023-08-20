@@ -1,0 +1,121 @@
+final List<ProductModel> _furniture = [
+  ProductModel(
+    productId: 'sofa-001',
+    productTitle: "Modern Leather Sofa",
+    productPrice: "899.99",
+    productCategory: "Sofas",
+    productDescription:
+        "Add a touch of modern elegance to your living room with this luxurious leather sofa. Crafted with top-grain leather upholstery and a sturdy wooden frame. Available in various colors.",
+    productImage: "https://unsplash.com/photos/fZuleEfeA1Q",
+    productQuantity: "10",
+  ),
+  ProductModel(
+    productId: 'dining-table-002',
+    productTitle: "Extendable Dining Table",
+    productPrice: "499.99",
+    productCategory: "Tables",
+    productDescription:
+        "Upgrade your dining space with this stylish extendable dining table. Made from solid wood and features an extendable leaf for extra seating. Chairs sold separately.",
+    productImage: "https://unsplash.com/photos/kvmdsTrGOBM",
+    productQuantity: "15",
+  ),
+  ProductModel(
+    productId: 'bed-003',
+    productTitle: "Queen Size Upholstered Bed",
+    productPrice: "699.99",
+    productCategory: "Beds",
+    productDescription:
+        "Sleep in comfort and style with this queen-size upholstered bed. Features a padded headboard and durable frame. Mattress and bedding not included.",
+    productImage: "https://unsplash.com/photos/aRT5UCf2MYY",
+    productQuantity: "8",
+  ),
+  ProductModel(
+    productId: 'sofa-004',
+    productTitle: "Classic Velvet Sofa",
+    productPrice: "799.99",
+    productCategory: "Sofas",
+    productDescription:
+        "Create a cozy atmosphere in your home with this classic velvet sofa. Soft and plush, perfect for relaxation. Available in multiple colors.",
+    productImage: "https://unsplash.com/photos/Wp7t4cWN-68",
+    productQuantity: "12",
+  ),
+  ProductModel(
+    productId: 'coffee-table-005',
+    productTitle: "Wooden Coffee Table",
+    productPrice: "249.99",
+    productCategory: "Tables",
+    productDescription:
+        "Complete your living room with this wooden coffee table. Features a rustic design and a lower shelf for storage or decoration.",
+    productImage: "https://unsplash.com/photos/PwmeVgE6JiI",
+    productQuantity: "20",
+  ),
+  ProductModel(
+    productId: 'wardrobe-006',
+    productTitle: "Large Wardrobe Closet",
+    productPrice: "999.99",
+    productCategory: "Furniture",
+    productDescription:
+        "Organize your clothes in style with this spacious wardrobe closet. Plenty of shelves and hanging space. Available in various finishes.",
+    productImage: "https://unsplash.com/photos/nPhVqChP1JI",
+    productQuantity: "7",
+  ),
+  ProductModel(
+    productId: 'recliner-chair-007',
+    productTitle: "Recliner Armchair",
+    productPrice: "399.99",
+    productCategory: "Chairs",
+    productDescription:
+        "Relax and unwind in this comfortable recliner armchair. Upholstered in high-quality fabric with a reclining feature for ultimate comfort.",
+    productImage: "https://unsplash.com/photos/qLn_QRW_zNk",
+    productQuantity: "14",
+  ),
+  ProductModel(
+    productId: 'bookshelf-008',
+    productTitle: "Tall Bookshelf",
+    productPrice: "329.99",
+    productCategory: "Furniture",
+    productDescription:
+        "Display your book collection and decorative items with this tall bookshelf. Sturdy construction with adjustable shelves.",
+    productImage: "https://unsplash.com/photos/YbLitAY8bPA",
+    productQuantity: "9",
+  ),
+  ProductModel(
+    productId: 'corner-sofa-009',
+    productTitle: "Corner Sectional Sofa",
+    productPrice: "1099.99",
+    productCategory: "Sofas",
+    productDescription:
+        "Maximize your seating space with this corner sectional sofa. Modular design allows for customization. Upholstered in premium fabric.",
+    productImage: "https://unsplash.com/photos/p4NZQqs5x00",
+    productQuantity: "6",
+  ),
+  ProductModel(
+    productId: 'dining-chair-010',
+    productTitle: "Set of 4 Dining Chairs",
+    productPrice: "199.99",
+    productCategory: "Chairs",
+    productDescription:
+        "Upgrade your dining area with this set of 4 dining chairs. Comfortable padded seats and stylish design.",
+    productImage: "https://unsplash.com/photos/zrebaMbVfac",
+    productQuantity: "18",
+  ),
+  ProductModel(
+    productId: 'office-desk-011',
+    productTitle: "Modern Office Desk",
+    productPrice: "449.99",
+    productCategory: "Desks",
+    productDescription:
+        "Create a productive workspace with this modern office desk. Features a spacious desktop and storage drawers.",
+    productImage: "https://unsplash.com/photos/Fg_4Wn1r0bU",
+    productQuantity: "11",
+  ),
+  ProductModel(
+    productId: 'bar-stool-012',
+    productTitle: "Adjustable Bar Stool",
+    productPrice: "79.99",
+    productCategory: "Chairs",
+    productDescription:
+        "Elevate your bar area with these adjustable bar stools. Swivel seat and chrome base with a footrest.",
+    productImage: "https://unsplash.com/photos/DX4WJQYf59M",
+    productQuantity: "22",
+  ),
