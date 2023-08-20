@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../../../app/routes/route_constants.dart';
+import '../../resources/color_manager.dart';
+import '../../widgets/ElevatedButton_custom.dart';
+import '../../widgets/text_custom.dart';
+import '../../widgets/textformfiled_custom.dart';
+
 class ResetPassView extends StatelessWidget {
   const ResetPassView({super.key});
 
