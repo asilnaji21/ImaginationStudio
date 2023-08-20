@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:project_app/app/routes/route_constants.dart';
 import 'package:project_app/presentaion/views/signup/signup_view.dart';
 
+import '../../presentaion/views/main/main_view.dart';
+import '../../presentaion/views/reset_password/reset_pass.dart';
+import '../../presentaion/views/reset_password/reset_password.dart';
 import '../../presentaion/views/signin/signin_view.dart';
+import '../../presentaion/views/signup/user_signup_view.dart';
 import '../../presentaion/views/welcome/welcome_view.dart';
 
 class RouteGenerator {
@@ -23,7 +27,7 @@ class RouteGenerator {
         );
       case RouteConstants.userSignUpRoute:
         return MaterialPageRoute(
-          builder: (context) => const UserSignUpView(),
+          builder: (context) =>  UserSignUpView(),
         );
 
       case RouteConstants.resetPassRoute:
