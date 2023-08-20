@@ -6,4 +6,7 @@ class ColorManager {
   static const Color borderColor = Color(0xff707070);
   static const Color blackColor = Color(0xff050505);
   static const Color textColor = Color(0xffEBE8E5);
+  static const Color textColor2 = Color(0xffA79C98);
+  static const Color whiteColor = Colors.white;
+  static const Color circleColor = Color(0xffA79C98);
 }

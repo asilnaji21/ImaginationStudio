@@ -5,22 +5,38 @@ import 'package:project_app/presentaion/views/signup/signup_view.dart';
 import '../../presentaion/views/signin/signin_view.dart';
 import '../../presentaion/views/welcome/welcome_view.dart';
 
-
 class RouteGenerator {
   static Route<dynamic> generateRoutes(RouteSettings settings) {
     switch (settings.name) {
       case RouteConstants.splashRoute:
         return MaterialPageRoute(
-          builder: (context) => WelcomeView(),
+          builder: (context) => const WelcomeView(),
         );
 
       case RouteConstants.signInRoute:
         return MaterialPageRoute(
-          builder: (context) => SignInView(),
+          builder: (context) => const SignInView(),
         );
       case RouteConstants.signUpRoute:
         return MaterialPageRoute(
-          builder: (context) => SignUpView(),
+          builder: (context) => const SignUpView(),
+        );
+      case RouteConstants.userSignUpRoute:
+        return MaterialPageRoute(
+          builder: (context) => const UserSignUpView(),
+        );
+
+      case RouteConstants.resetPassRoute:
+        return MaterialPageRoute(
+          builder: (context) => const ResetPasswordView(),
+        );
+      case RouteConstants.resetPassRoute2:
+        return MaterialPageRoute(
+          builder: (context) => const ResetPassView(),
+        );
+      case RouteConstants.mainRoute:
+        return MaterialPageRoute(
+          builder: (context) => const MainView(),
         );
     }
 
