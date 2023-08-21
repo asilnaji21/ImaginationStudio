@@ -9,4 +9,10 @@ class ColorManager {
   static const Color textColor2 = Color(0xffA79C98);
   static const Color whiteColor = Colors.white;
   static const Color circleColor = Color(0xffA79C98);
+  static const Color circleIndicatorColor = Color(0x85C6BEBE);
+
+  static const Color circleIndicatorColor2 = Color(0xB3565353);
+
+  static const Color backgroundCategoryColor =
+      Color.fromARGB(197, 221, 221, 181);
 }

@@ -18,8 +18,7 @@ class CustomDropDawnButton extends StatelessWidget {
           isExpanded: true,
           value: 'living rooms',
           onChanged: (String? newValue) {
-            // Handle the selection here
-            print(newValue);
+         
           },
           items: <String>[
             'living rooms',

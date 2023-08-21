@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
 
+import '../../../app/routes/route_constants.dart';
+import '../../resources/color_manager.dart';
+import '../../widgets/ElevatedButton_custom.dart';
+import '../../widgets/text_custom.dart';
+import '../../widgets/textformfiled_custom.dart';
+import '../signup/user_signup_view.dart';
+
 class ResetPasswordView extends StatelessWidget {
   const ResetPasswordView({super.key});
 
@@ -40,7 +47,7 @@ class ResetPasswordView extends StatelessWidget {
                   },
                   color: ColorManager.primaryMainColor,
                   text: "Send link",
-                  width: 300,
+                  // width: 300,
                   colortext: ColorManager.whiteColor),
               const SizedBox(
                 height: 40,
@@ -66,9 +73,7 @@ class ResetPasswordView extends StatelessWidget {
                             color: ColorManager.textColor2,
                             decoration: TextDecoration.underline),
                       ),
-                      const SizedBox(
-                        height: 155,
-                      ))
+                  )
                 ],
               )
             ],

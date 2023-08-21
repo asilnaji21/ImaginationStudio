@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_app/presentaion/resources/color_manager.dart';
+import 'package:project_app/presentaion/views/signup/user_signup_view.dart';
 import 'package:project_app/presentaion/widgets/ElevatedButton_custom.dart';
 import 'package:project_app/presentaion/widgets/textbutton_custom.dart';
 import 'package:project_app/presentaion/widgets/textformfiled_custom.dart';
