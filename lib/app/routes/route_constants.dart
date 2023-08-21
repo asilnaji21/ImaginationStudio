@@ -6,4 +6,5 @@ class RouteConstants {
   static const String resetPassRoute = "/resetPasswordRoute";
   static const String resetPassRoute2 = "/resetPasswordRoute2";
   static const String mainRoute = "/mainRoute";
+  static const String homeRoute = "/HomeRoute";
 }
