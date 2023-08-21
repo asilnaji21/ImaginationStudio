@@ -17,9 +17,7 @@ class _MainViewState extends State<MainView> {
   }
 
   static final List<Widget> _pages = <Widget>[
-    Container(
-      color: Colors.teal,
-    ),
+    const HomeView(),
     Container(
       color: Colors.yellow,
     ),
@@ -49,30 +47,50 @@ class _MainViewState extends State<MainView> {
           //New
           items: const [
             BottomNavigationBarItem(
+                activeIcon: Icon(
+                  Icons.home,
+                  color: Colors.black,
+                ),
                 icon: Icon(
                   Icons.home_outlined,
                   color: Colors.grey,
                 ),
                 label: ""),
             BottomNavigationBarItem(
+                activeIcon: Icon(
+                  Icons.favorite,
+                  color: Colors.black,
+                ),
                 icon: Icon(
                   Icons.favorite_outline,
                   color: Colors.grey,
                 ),
                 label: ""),
             BottomNavigationBarItem(
+                activeIcon: Icon(
+                  Icons.shopping_bag,
+                  color: Colors.black,
+                ),
                 icon: Icon(
                   Icons.shopping_bag_outlined,
                   color: Colors.grey,
                 ),
                 label: ""),
             BottomNavigationBarItem(
+                activeIcon: Icon(
+                  Icons.indeterminate_check_box,
+                  color: Colors.black,
+                ),
                 icon: Icon(
                   Icons.indeterminate_check_box_outlined,
                   color: Colors.grey,
                 ),
                 label: ""),
             BottomNavigationBarItem(
+                activeIcon: Icon(
+                  Icons.person,
+                  color: Colors.black,
+                ),
                 icon: Icon(
                   Icons.person_outline_outlined,
                   color: Colors.grey,
@@ -80,6 +98,7 @@ class _MainViewState extends State<MainView> {
                 label: ""),
           ]),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         actions: [
           IconButton(
             onPressed: () {},
@@ -100,5 +119,3 @@ class _MainViewState extends State<MainView> {
     );
   }
 }
-
-////////////
