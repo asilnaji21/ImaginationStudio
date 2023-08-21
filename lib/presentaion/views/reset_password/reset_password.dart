@@ -73,9 +73,7 @@ class ResetPasswordView extends StatelessWidget {
                             color: ColorManager.textColor2,
                             decoration: TextDecoration.underline),
                       ),
-                      const SizedBox(
-                        height: 155,
-                      ))
+                  )
                 ],
               )
             ],

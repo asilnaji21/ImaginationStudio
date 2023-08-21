@@ -14,15 +14,18 @@ class _HomeViewState extends State<HomeView> {
     'assets/sign.jpg',
     'assets/hhh.jpg',
   ];
-
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 20.0, right: 20, bottom: 10),
+    return Scaffold(
+        body: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 22),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
+          const SizedBox(
+            height: 44,
+          ),
           const Text(
             "You need ",
             style: TextStyle(
@@ -66,9 +69,9 @@ class _HomeViewState extends State<HomeView> {
           const SizedBox(
             height: 40,
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
+            children: [
               Text(
                 "Category",
                 style: TextStyle(
@@ -84,54 +87,9 @@ class _HomeViewState extends State<HomeView> {
                     fontSize: 18),
               ),
             ],
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          SizedBox(
-            height: 210,
-            child: ListView.separated(
-              scrollDirection: Axis.horizontal, // توجيه القائمة الأفقي
-              itemBuilder: (context, index) => ClipRect(
-                clipBehavior: Clip.antiAlias,
-                child: Column(
-                  children: [
-                    const SizedBox(
-                      height: 7,
-                    ),
-                    Container(
-                      width: 150,
-                      height: 150,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8),
-                        image: DecorationImage(
-                          image: AssetImage(
-                            Constant.categoriesList[index].image,
-                          ),
-                          fit: BoxFit.fill,
-                        ),
-                        border: Border.all(
-                          color: Colors.white, // لون الحدود
-                          width: 2.0, // عرض الحدود
-                        ),
-                      ),
-                    ),
-                    Text(
-                      Constant.categoriesList[index].name,
-                      style: const TextStyle(
-                          fontSize: 27, fontWeight: FontWeight.bold),
-                    )
-                  ],
-                ),
-              ),
-              separatorBuilder: (context, index) => const SizedBox(
-                width: 15,
-              ),
-              itemCount: Constant.categoriesList.length,
-            ),
-          ),
+          )
         ],
       ),
-    );
+    ));
   }
 }

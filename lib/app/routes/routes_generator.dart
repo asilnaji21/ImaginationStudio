@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:project_app/app/routes/route_constants.dart';
+import 'package:project_app/presentaion/views/category/category.dart';
 import 'package:project_app/presentaion/views/signup/signup_view.dart';
 
+import '../../presentaion/views/home/home_view.dart';
 import '../../presentaion/views/main/main_view.dart';
 import '../../presentaion/views/reset_password/reset_pass.dart';
 import '../../presentaion/views/reset_password/reset_password.dart';
@@ -46,6 +48,10 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (context) => const HomeView(),
         );
+      case RouteConstants.categoryRoute:
+        return MaterialPageRoute(
+          builder: (context) => const CategoryView(),
+        );
     }
 
     return unDefineRoute();
@@ -53,6 +59,6 @@ class RouteGenerator {
 
   static Route<dynamic> unDefineRoute() => MaterialPageRoute(
       builder: (_) => const Scaffold(
-            body: Text("AppStrings.noRouteFound"),
+            body: Text("noRouteFound"),
           ));
 }

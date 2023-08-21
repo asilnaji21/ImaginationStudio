@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../resources/color_manager.dart';
 
+// ignore: must_be_immutable
 class CustomTextFormField extends StatelessWidget {
   String? nameText;
   IconData? icon;

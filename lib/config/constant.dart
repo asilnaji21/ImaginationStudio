@@ -1,3 +1,4 @@
+import '../presentaion/resources/image_assets.dart';
 import '../presentaion/views/main/domain/model/categories_model.dart';
 import '../presentaion/views/main/domain/model/product_model.dart';
 

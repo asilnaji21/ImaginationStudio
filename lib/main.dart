@@ -11,14 +11,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
       theme: ThemeData(
         fontFamily: "Aldhabi",
-        appBarTheme: const  AppBarTheme(
+        appBarTheme: const AppBarTheme(
             backgroundColor: Colors.transparent, elevation: 0),
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: RouteConstants.splashRoute,
+      initialRoute: RouteConstants.categoryRoute,
       onGenerateRoute: RouteGenerator.generateRoutes,
     );
   }
