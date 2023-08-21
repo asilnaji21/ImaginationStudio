@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
@@ -75,7 +74,7 @@ class _HomeViewState extends State<HomeView> {
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontFamily: "Arial",
-                    fontSize: 28),
+                    fontSize: 25),
               ),
               Text(
                 "View All",
@@ -85,7 +84,52 @@ class _HomeViewState extends State<HomeView> {
                     fontSize: 18),
               ),
             ],
-          )
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          SizedBox(
+            height: 210,
+            child: ListView.separated(
+              scrollDirection: Axis.horizontal, // توجيه القائمة الأفقي
+              itemBuilder: (context, index) => ClipRect(
+                clipBehavior: Clip.antiAlias,
+                child: Column(
+                  children: [
+                    const SizedBox(
+                      height: 7,
+                    ),
+                    Container(
+                      width: 150,
+                      height: 150,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        image: DecorationImage(
+                          image: AssetImage(
+                            Constant.categoriesList[index].image,
+                          ),
+                          fit: BoxFit.fill,
+                        ),
+                        border: Border.all(
+                          color: Colors.white, // لون الحدود
+                          width: 2.0, // عرض الحدود
+                        ),
+                      ),
+                    ),
+                    Text(
+                      Constant.categoriesList[index].name,
+                      style: const TextStyle(
+                          fontSize: 27, fontWeight: FontWeight.bold),
+                    )
+                  ],
+                ),
+              ),
+              separatorBuilder: (context, index) => const SizedBox(
+                width: 15,
+              ),
+              itemCount: Constant.categoriesList.length,
+            ),
+          ),
         ],
       ),
     );
