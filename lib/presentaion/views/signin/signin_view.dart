@@ -53,15 +53,45 @@ class SignInView extends StatelessWidget {
               ),
               CustomElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).pushNamed(RouteConstants.mainRoute);
+                  Navigator.of(context)
+                      .pushReplacementNamed(RouteConstants.mainRoute);
                 },
                 text: "Sign in",
                 color: ColorManager.primaryMainEnableColor,
                 colortext: ColorManager.textColor,
                 width: 350,
               ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    "Not registeres?",
+                    style:
+                        TextStyle(fontSize: 25, color: ColorManager.textColor2),
+                  ),
+                  const SizedBox(
+                    width: 3,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context)
+                          .pushNamed(RouteConstants.signUpRoute);
+                    },
+                    child: const Text(
+                      "Sign up",
+                      style: TextStyle(
+                          fontSize: 25,
+                          color: ColorManager.textColor2,
+                          decoration: TextDecoration.underline),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 155,
+                  )
+                ],
+              ),
               const SizedBox(
-                height: 190,
+                height: 150,
               ),
               /*   CustomTextButton(
                 onPressed: () {
