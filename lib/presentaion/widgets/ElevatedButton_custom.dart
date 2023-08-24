@@ -8,12 +8,13 @@ class CustomElevatedButton extends StatelessWidget {
   Color? color;
   double? height, width;
   void Function()? onPressed;
-
+  double? fontSize;
   CustomElevatedButton({
     required this.color,
     required this.text,
     this.height,
     this.width,
+    this.fontSize,
     this.onPressed,
     required this.colortext,
     super.key,
@@ -32,7 +33,8 @@ class CustomElevatedButton extends StatelessWidget {
         child: Text(
           text!,
           style: TextStyle(
-            fontSize: 35, color: colortext, //fontWeight: FontWeight.bold
+            fontSize: fontSize ?? 35,
+            color: colortext, //fontWeight: FontWeight.bold
           ),
         ));
   }
