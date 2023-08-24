@@ -5,14 +5,18 @@ import 'package:project_app/presentaion/views/mycart/mycart_view.dart';
 import 'package:project_app/presentaion/views/product/product_view.dart';
 import 'package:project_app/presentaion/views/signup/signup_view.dart';
 
+import '../../presentaion/views/category/category.dart';
 import '../../presentaion/views/home/home_view.dart';
 import '../../presentaion/views/main/main_view.dart';
+import '../../presentaion/views/mycart/mycart_view.dart';
+import '../../presentaion/views/product/product_view.dart';
 import '../../presentaion/views/reset_password/reset_pass.dart';
 import '../../presentaion/views/reset_password/reset_password.dart';
 import '../../presentaion/views/saved/saved_view.dart';
 import '../../presentaion/views/signin/signin_view.dart';
 import '../../presentaion/views/signup/user_signup_view.dart';
 import '../../presentaion/views/welcome/welcome_view.dart';
+import 'route_constants.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoutes(RouteSettings settings) {
@@ -32,7 +36,7 @@ class RouteGenerator {
         );
       case RouteConstants.userSignUpRoute:
         return MaterialPageRoute(
-          builder: (context) =>  UserSignUpView(),
+          builder: (context) => UserSignUpView(),
         );
 
       case RouteConstants.resetPassRoute:
@@ -55,10 +59,10 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (context) => const CategoryView(),
         );
-      case RouteConstants.productRoute:
+      /*   case RouteConstants.productRoute:
         return MaterialPageRoute(
           builder: (context) => const ProductView(),
-        );
+        );*/
       case RouteConstants.savedRoute:
         return MaterialPageRoute(
           builder: (context) => const SavedView(),
@@ -66,6 +70,14 @@ class RouteGenerator {
       case RouteConstants.myCartRoute:
         return MaterialPageRoute(
           builder: (context) => const MyCart(),
+        );
+      case RouteConstants.localManufacturesRoute:
+        return MaterialPageRoute(
+          builder: (context) => const LocalManufacturesRoute(),
+        );
+      case RouteConstants.profileRoute:
+        return MaterialPageRoute(
+          builder: (context) => const MyProfileView(),
         );
     }
 
