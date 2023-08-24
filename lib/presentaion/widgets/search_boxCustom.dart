@@ -1,11 +1,12 @@
-
-
 import 'package:flutter/material.dart';
 
 import '../resources/color_manager.dart';
 
 class SearchBox extends StatelessWidget {
-  const SearchBox({super.key});
+  final TextEditingController? controller;
+  final void Function(String)? onChanged, onSubmitted;
+  const SearchBox(
+      {super.key, this.controller, this.onChanged, this.onSubmitted});
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +18,11 @@ class SearchBox extends StatelessWidget {
         decoration: BoxDecoration(
           border: Border.all(color: Colors.grey),
         ),
-        child: const TextField(
-          decoration: InputDecoration(
+        child: TextField(
+          onChanged: onChanged,
+          onSubmitted: onSubmitted,
+          controller: controller,
+          decoration: const InputDecoration(
             hintText: 'Search',
             hintStyle: TextStyle(
                 fontSize: 30,
