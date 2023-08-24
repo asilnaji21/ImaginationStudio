@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:project_app/app/routes/route_constants.dart';
 import 'package:project_app/presentaion/views/category/category.dart';
+import 'package:project_app/presentaion/views/mycart/mycart_view.dart';
+import 'package:project_app/presentaion/views/product/product_view.dart';
 import 'package:project_app/presentaion/views/signup/signup_view.dart';
 
 import '../../presentaion/views/home/home_view.dart';
 import '../../presentaion/views/main/main_view.dart';
 import '../../presentaion/views/reset_password/reset_pass.dart';
 import '../../presentaion/views/reset_password/reset_password.dart';
+import '../../presentaion/views/saved/saved_view.dart';
 import '../../presentaion/views/signin/signin_view.dart';
 import '../../presentaion/views/signup/user_signup_view.dart';
 import '../../presentaion/views/welcome/welcome_view.dart';
@@ -51,6 +54,18 @@ class RouteGenerator {
       case RouteConstants.categoryRoute:
         return MaterialPageRoute(
           builder: (context) => const CategoryView(),
+        );
+      case RouteConstants.productRoute:
+        return MaterialPageRoute(
+          builder: (context) => const ProductView(),
+        );
+      case RouteConstants.savedRoute:
+        return MaterialPageRoute(
+          builder: (context) => const SavedView(),
+        );
+      case RouteConstants.myCartRoute:
+        return MaterialPageRoute(
+          builder: (context) => const MyCart(),
         );
     }
 

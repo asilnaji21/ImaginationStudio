@@ -9,7 +9,12 @@ class ColorManager {
   static const Color textColor2 = Color(0xffA79C98);
   static const Color whiteColor = Colors.white;
   static const Color circleColor = Color(0xffA79C98);
+  static const Color circleColorGreen = Color(0xFF406B57);
+  static const Color circleColorGrid = Color(0xFFB07D42);
+  static const Color circleColorBinkh = Color(0xFFD6AE79A1);
   static const Color circleIndicatorColor = Color(0x85C6BEBE);
+  static const Color greyColor = Color(0x96C6BEBE8C);
+  static const Color grey2 = Color(0x6B050505);
 
   static const Color circleIndicatorColor2 = Color(0xB3565353);
 

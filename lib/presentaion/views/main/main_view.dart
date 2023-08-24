@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../home/home_view.dart';
+import '../saved/saved_view.dart';
+
 class MainView extends StatefulWidget {
   const MainView({super.key});
 
@@ -18,9 +21,7 @@ class _MainViewState extends State<MainView> {
 
   static final List<Widget> _pages = <Widget>[
     const HomeView(),
-    Container(
-      color: Colors.yellow,
-    ),
+  SavedView(),
     Container(
       color: Colors.red,
     ),

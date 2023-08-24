@@ -18,8 +18,9 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.transparent, elevation: 0),
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: RouteConstants.categoryRoute,
+      initialRoute: RouteConstants.splashRoute,
       onGenerateRoute: RouteGenerator.generateRoutes,
     );
   }
 }
+
