@@ -5,10 +5,17 @@ import '../../widgets/ColoredCircle.dart';
 import '../../widgets/CustomBoxTextFiledComment.dart';
 import '../../widgets/ElevatedButton_custom.dart';
 import '../../widgets/MyImageCarousel.dart';
+import '../main/domain/model/product_model.dart';
 
-class ProductView extends StatelessWidget {
-  const ProductView({Key? key}) : super(key: key);
+class ProductView extends StatefulWidget {
+  final ProductModel productModel;
+  const ProductView({Key? key, required this.productModel}) : super(key: key);
 
+  @override
+  State<ProductView> createState() => _ProductViewState();
+}
+
+class _ProductViewState extends State<ProductView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,34 +38,34 @@ class ProductView extends StatelessWidget {
         child: Column(
           children: [
             const MyImageCarousel(),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 47),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 47),
               child: SizedBox(
                 width: double.infinity,
                 child: Text(
-                  "500\$ ",
+                  "${widget.productModel.productPrice}\$ ",
                   textAlign: TextAlign.right,
-                  style:
-                      TextStyle(fontSize: 44, color: ColorManager.textColor2),
+                  style: const TextStyle(
+                      fontSize: 44, color: ColorManager.textColor2),
                 ),
               ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 27),
-              child: Container(
+              child: SizedBox(
                 width: double.infinity,
-                child: const Text(
-                  "Modern Velvet 3 Seater Sofa \n /Dark green",
+                child: Text(
+                  "${widget.productModel.productTitle} \n /Dark green",
                   textAlign: TextAlign.left,
-                  style: TextStyle(fontSize: 30, fontFamily: 'Aldhabi'),
+                  style: const TextStyle(fontSize: 30, fontFamily: 'Aldhabi'),
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 27),
-              child: Container(
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 27),
+              child: SizedBox(
                 width: double.infinity,
-                child: const Text(
+                child: Text(
                   "Color",
                   textAlign: TextAlign.left,
                   style: TextStyle(fontSize: 40, fontFamily: 'Aldhabi'),
@@ -81,9 +88,9 @@ class ProductView extends StatelessWidget {
                 ],
               ),
             ),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
+              children: const [
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 30),
                   child: Text(
@@ -146,7 +153,7 @@ class ProductView extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.0),
                     ),
-                    minimumSize: Size(84, 47),
+                    minimumSize: const Size(84, 47),
                   ),
                   child: const Text(
                     'Buy Now',
