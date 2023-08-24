@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 
-class CustomDropDawnButton extends StatelessWidget {
+class CustomDropDawnButton extends StatefulWidget {
   const CustomDropDawnButton({
     super.key,
   });
 
+  @override
+  State<CustomDropDawnButton> createState() => _CustomDropDawnButtonState();
+}
+
+class _CustomDropDawnButtonState extends State<CustomDropDawnButton> {
+  String? _selectedValue;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -13,12 +19,23 @@ class CustomDropDawnButton extends StatelessWidget {
         border: Border.all(color: Colors.grey),
       ),
       child: DropdownButtonHideUnderline(
-        // Wrap the DropdownButton with DropdownButtonHideUnderline
         child: DropdownButton<String>(
+          hint: const Padding(
+            padding: EdgeInsets.only(
+              left: 16,
+            ),
+            child: Text(
+              "Select category",
+              style: TextStyle(fontSize: 20, fontFamily: "Aldhabi"),
+            ),
+          ),
           isExpanded: true,
-          value: 'living rooms',
+          value: _selectedValue,
           onChanged: (String? newValue) {
-         
+            setState(() {
+              _selectedValue = newValue;
+              print(newValue);
+            });
           },
           items: <String>[
             'living rooms',
@@ -30,7 +47,7 @@ class CustomDropDawnButton extends StatelessWidget {
               value: value,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text(value),
+                child: Text(value, style: const TextStyle(fontSize: 20)),
               ),
             );
           }).toList(),
