@@ -66,6 +66,7 @@ class SignUpView extends StatelessWidget {
               const SizedBox(
                 height: 18,
               ),
+              CustomText(text: "Select category"),
               const CustomDropDawnButton(),
               const SizedBox(
                 height: 18,
@@ -89,14 +90,35 @@ class SignUpView extends StatelessWidget {
                 text: "Signup",
                 colortext: ColorManager.textColor,
               ),
-              const SizedBox(
-                height: 18,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    "You have account?",
+                    style:
+                        TextStyle(fontSize: 25, color: ColorManager.textColor2),
+                  ),
+                  const SizedBox(
+                    width: 3,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context)
+                          .pushNamed(RouteConstants.signInRoute);
+                    },
+                    child: const Text(
+                      "Sign in",
+                      style: TextStyle(
+                          fontSize: 25,
+                          color: ColorManager.textColor2,
+                          decoration: TextDecoration.underline),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 155,
+                  )
+                ],
               ),
-              CustomTextButton(
-                  onPressed: () {
-                    Navigator.of(context).pushNamed(RouteConstants.signInRoute);
-                  },
-                  text: "Or Sign In by")
             ]),
           ),
         ));

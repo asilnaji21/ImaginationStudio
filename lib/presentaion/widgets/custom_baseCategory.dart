@@ -1,21 +1,31 @@
 import 'package:flutter/material.dart';
 
 import '../resources/color_manager.dart';
+import '../views/category_products/category_products.dart';
+import '../views/main/domain/model/categories_model.dart';
 
 class CustomBaseCategory extends StatelessWidget {
-  final String? namecategory;
-  final String? imageUrl;
+  final CategoryModel categoryModel;
   const CustomBaseCategory({
-    required this.namecategory,
-    required this.imageUrl,
+    required this.categoryModel,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return InkWell(
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) =>
+                CategoryProducts(categoryName: categoryModel.name),
+          ),
+        );
+      },
+      child: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 20),
         width: 428,
-        height: 120,
+        height: 110,
         decoration: const BoxDecoration(
           color: ColorManager.textColor,
           borderRadius: BorderRadius.only(
@@ -30,9 +40,9 @@ class CustomBaseCategory extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(top: 8.0, bottom: 8, left: 18),
               child: Text(
-                namecategory!,
+                categoryModel.name,
                 style: const TextStyle(
                   color: ColorManager.blackColor,
                   fontSize: 38,
@@ -41,13 +51,26 @@ class CustomBaseCategory extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 25),
-              child: Image.asset(
-                imageUrl!,
-                width: 85,
-                height: 85,
+              child: ClipRect(
+                clipBehavior: Clip.antiAlias,
+                child: Container(
+                  width: 85,
+                  height: 85,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
+                    image: DecorationImage(
+                      image: NetworkImage(
+                        categoryModel.image,
+                      ),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
               ),
             ),
           ],
-        ));
+        ),
+      ),
+    );
   }
 }

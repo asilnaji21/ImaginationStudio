@@ -47,35 +47,8 @@ class ResetPasswordView extends StatelessWidget {
                   },
                   color: ColorManager.primaryMainColor,
                   text: "Send link",
-                  // width: 300,
+                  width: 300,
                   colortext: ColorManager.whiteColor),
-              const SizedBox(
-                height: 40,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text(
-                    "Not registeres?",
-                    style:
-                        TextStyle(fontSize: 25, color: ColorManager.textColor2),
-                  ),
-                  const SizedBox(
-                    width: 3,
-                  ),
-                  InkWell(onTap: () {
-                    Navigator.of(context).pushNamed(RouteConstants.signUpRoute);
-                  },
-                      child: const Text(
-                        "Sign up",
-                        style: TextStyle(
-                            fontSize: 25,
-                            color: ColorManager.textColor2,
-                            decoration: TextDecoration.underline),
-                      ),
-                  )
-                ],
-              )
             ],
           ),
         ),

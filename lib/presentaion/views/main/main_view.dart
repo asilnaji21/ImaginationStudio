@@ -21,16 +21,14 @@ class _MainViewState extends State<MainView> {
 
   static final List<Widget> _pages = <Widget>[
     const HomeView(),
-  SavedView(),
+    SavedView(),
     Container(
       color: Colors.red,
     ),
     Container(
       color: Colors.green,
     ),
-    Container(
-      color: Colors.blue,
-    )
+    const MyProfileView()
   ];
   @override
   Widget build(BuildContext context) {

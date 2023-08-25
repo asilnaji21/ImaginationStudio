@@ -13,9 +13,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
+        scaffoldBackgroundColor: Colors.white,
         fontFamily: "Aldhabi",
-        appBarTheme: const AppBarTheme(
-            backgroundColor: Colors.transparent, elevation: 0),
+        appBarTheme:
+            const AppBarTheme(backgroundColor: Colors.white, elevation: 0),
       ),
       debugShowCheckedModeBanner: false,
       initialRoute: RouteConstants.splashRoute,
@@ -23,4 +24,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

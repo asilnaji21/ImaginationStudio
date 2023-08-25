@@ -1,16 +1,47 @@
-import 'package:flutter/material.dart';
-import 'package:project_app/presentaion/resources/color_manager.dart';
+import '../../../app/routes/route_constants.dart';
+import '../../resources/color_manager.dart';
 import '../../widgets/ImageCarouselWithIndicators.dart';
 import '../../widgets/customTextCategory.dart';
 import '../../widgets/custom_baseCategory.dart';
-import '../../widgets/search_boxCustom.dart';
+import '../main/domain/model/categories_model.dart';
 
-class CategoryView extends StatelessWidget {
+class CategoryView extends StatefulWidget {
   const CategoryView({super.key});
+
+  @override
+  State<CategoryView> createState() => _CategoryViewState();
+}
+
+class _CategoryViewState extends State<CategoryView> {
+  late List<CategoryModel>? categoryList;
+  @override
+  void initState() {
+    super.initState();
+    getCategory();
+  }
+
+  TextEditingController searchTextController = TextEditingController();
+
+  List<CategoryModel> getCategory() {
+    categoryList = Constant.categoriesList
+        .where((element) => (element.name
+            .toLowerCase()
+            .contains(searchTextController.text.toLowerCase())))
+        .toList();
+    return categoryList!;
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: const Color.fromARGB(255, 230, 186, 171),
+        child: const Icon(Icons.add),
+        onPressed: () {
+          Navigator.of(context)
+              .pushNamed(RouteConstants.localManufacturesRoute);
+        },
+      ),
       appBar: AppBar(
         actions: [
           IconButton(
@@ -32,115 +63,43 @@ class CategoryView extends StatelessWidget {
             const SizedBox(
               height: 18,
             ),
-            const SearchBox(),
-            const SizedBox(
-              height: 44,
-            ),
-            ImageCarouselWithIndicators(),
-            const SizedBox(
-              height: 44,
-            ),
-            const CustomBaseCategory(
-              imageUrl: 'assets/LivingRoom.jpg',
-              namecategory: 'Living Rooms',
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            const CustomBaseCategory(
-              imageUrl: 'assets/Sabi Bedroom.jpg',
-              namecategory: 'Bedrooms',
+            SearchBox(
+              controller: searchTextController,
+              onChanged: (value) {
+                setState(() {
+                  getCategory();
+                });
+              },
+              onSubmitted: (value) {
+                setState(() {
+                  getCategory();
+                });
+              },
             ),
             const SizedBox(
-              height: 15,
+              height: 30,
             ),
-            const CustomBaseCategory(
-              imageUrl: 'assets/Charis.jpg',
-              namecategory: 'Local Manufactures',
-            ),
+            const ImageCarouselWithIndicators(),
             const SizedBox(
-              height: 15,
+              height: 10,
             ),
-            const CustomBaseCategory(
-              imageUrl: 'assets/kitchen.jpg',
-              namecategory: 'Kitchen',
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            const CustomBaseCategory(
-              imageUrl: 'assets/Gardens.jpg',
-              namecategory: 'Gardens',
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            const CustomBaseCategory(
-              imageUrl: 'assets/Balcon.jpg',
-              namecategory: 'Balconies',
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            const CustomBaseCategory(
-              imageUrl: 'assets/sign.jpg',
-              namecategory: 'Accessories',
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            const CustomBaseCategory(
-              imageUrl: 'assets/Charis.jpg',
-              namecategory: 'Sofa',
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            const CustomBaseCategory(
-              imageUrl: 'assets/Charis.jpg',
-              namecategory: 'Chairs',
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            const CustomBaseCategory(
-              imageUrl: 'assets/Charis.jpg',
-              namecategory: 'Doors',
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            const CustomBaseCategory(
-              imageUrl: 'assets/Charis.jpg',
-              namecategory: 'Local Manufactures',
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            const CustomBaseCategory(
-              imageUrl: 'assets/Charis.jpg',
-              namecategory: 'Local Manufactures',
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            const CustomBaseCategory(
-              imageUrl: 'assets/Charis.jpg',
-              namecategory: 'Local Manufactures',
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            const CustomBaseCategory(
-              imageUrl: 'assets/Charis.jpg',
-              namecategory: 'Local Manufactures',
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            const CustomBaseCategory(
-              imageUrl: 'assets/Charis.jpg',
-              namecategory: 'Local Manufactures',
+            SizedBox(
+              height: 350,
+              child: categoryList != null && categoryList!.isNotEmpty
+                  ? ListView.separated(
+                      itemBuilder: (context, index) => CustomBaseCategory(
+                          categoryModel: categoryList![index]),
+                      separatorBuilder: (context, index) => const SizedBox(
+                            height: 10,
+                          ),
+                      itemCount: categoryList!.length)
+                  : const Center(
+                      child: Text(
+                        "No Category Found",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 30),
+                      ),
+                    ),
             ),
           ],
         ),
@@ -148,4 +107,3 @@ class CategoryView extends StatelessWidget {
     );
   }
 }
-
