@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../widgets/customProfileButton.dart';
+
 class MyProfileView extends StatefulWidget {
   const MyProfileView({super.key});
 
@@ -25,8 +27,8 @@ class _MyProfileViewState extends State<MyProfileView> {
                     fontWeight: FontWeight.w400),
               ),
             ),
-            Row(
-              children: const [
+          const  Row(
+              children:  [
                 CircleAvatar(
                   radius: 40,
                   backgroundImage: NetworkImage(
