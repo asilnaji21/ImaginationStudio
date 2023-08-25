@@ -5,14 +5,20 @@ import 'package:project_app/presentaion/views/mycart/mycart_view.dart';
 import 'package:project_app/presentaion/views/product/product_view.dart';
 import 'package:project_app/presentaion/views/signup/signup_view.dart';
 
+import '../../presentaion/views/My order/myorder.dart';
 import '../../presentaion/views/category/category.dart';
 import '../../presentaion/views/home/home_view.dart';
+import '../../presentaion/views/local_manufactures/local_manufactures.dart';
 import '../../presentaion/views/main/main_view.dart';
 import '../../presentaion/views/mycart/mycart_view.dart';
 import '../../presentaion/views/product/product_view.dart';
+import '../../presentaion/views/profile/edit_informatio.dart';
+import '../../presentaion/views/profile/profile_serviceProvider.dart';
+import '../../presentaion/views/profile/profile_view.dart';
 import '../../presentaion/views/reset_password/reset_pass.dart';
 import '../../presentaion/views/reset_password/reset_password.dart';
 import '../../presentaion/views/saved/saved_view.dart';
+import '../../presentaion/views/serviceprovider/contact_service_provider.dart';
 import '../../presentaion/views/signin/signin_view.dart';
 import '../../presentaion/views/signup/user_signup_view.dart';
 import '../../presentaion/views/welcome/welcome_view.dart';
@@ -78,6 +84,18 @@ class RouteGenerator {
       case RouteConstants.profileRoute:
         return MaterialPageRoute(
           builder: (context) => const MyProfileView(),
+        );
+      case RouteConstants.myOrderRoute:
+        return MaterialPageRoute(
+          builder: (context) =>  MyOrderView(),
+        );
+      case RouteConstants.editInformationRoute:
+        return MaterialPageRoute(
+          builder: (context) =>  EditInformationView(),
+        );
+      case RouteConstants.serviceProviderRoute:
+        return MaterialPageRoute(
+          builder: (context) => ServiceProvider(),
         );
     }
 

@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
+
+import '../../resources/color_manager.dart';
+import '../../widgets/ElevatedButton_custom.dart';
+import '../../widgets/text_custom.dart';
+import '../../widgets/textformfiled_custom.dart';
+import '../../widgets/wood_type_drop_dawn_menu.dart';
 
 class LocalManufacturesRoute extends StatefulWidget {
   const LocalManufacturesRoute({super.key});

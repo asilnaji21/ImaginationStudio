@@ -14,4 +14,8 @@ class RouteConstants {
   static const String categoryProductsRoute = "/categoryProductsRoute";
   static const String localManufacturesRoute = "/localManufacturesRoute";
   static const String profileRoute = "/profileRoute";
+  static const String myOrderRoute = "/myOrderRoute";
+  static const String editInformationRoute = "/EditInformationViewRoute";
+  static const String profileServiceProviderRoute = "/ProfileServiceProviderRoute";
+  static const String serviceProviderRoute = "/ServiceProviderRoute";
 }

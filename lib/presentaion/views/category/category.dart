@@ -1,8 +1,12 @@
+import 'package:flutter/material.dart';
+
 import '../../../app/routes/route_constants.dart';
+import '../../../config/constant.dart';
 import '../../resources/color_manager.dart';
 import '../../widgets/ImageCarouselWithIndicators.dart';
 import '../../widgets/customTextCategory.dart';
 import '../../widgets/custom_baseCategory.dart';
+import '../../widgets/search_boxCustom.dart';
 import '../main/domain/model/categories_model.dart';
 
 class CategoryView extends StatefulWidget {
@@ -79,7 +83,7 @@ class _CategoryViewState extends State<CategoryView> {
             const SizedBox(
               height: 30,
             ),
-            const ImageCarouselWithIndicators(),
+            ImageCarouselWithIndicators(),
             const SizedBox(
               height: 10,
             ),

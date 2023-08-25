@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../home/home_view.dart';
+import '../profile/profile_view.dart';
 import '../saved/saved_view.dart';
 
 class MainView extends StatefulWidget {
