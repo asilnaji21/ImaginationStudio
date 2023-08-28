@@ -42,7 +42,7 @@ class RouteGenerator {
         );
       case RouteConstants.userSignUpRoute:
         return MaterialPageRoute(
-          builder: (context) => UserSignUpView(),
+          builder: (context) => const UserSignUpView(),
         );
 
       case RouteConstants.resetPassRoute:
@@ -65,9 +65,9 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (context) => const CategoryView(),
         );
-      /*   case RouteConstants.productRoute:
+      /* case RouteConstants.productRoute:
         return MaterialPageRoute(
-          builder: (context) => const ProductView(),
+          builder: (context) =>  ProductView(),
         );*/
       case RouteConstants.savedRoute:
         return MaterialPageRoute(
@@ -87,15 +87,27 @@ class RouteGenerator {
         );
       case RouteConstants.myOrderRoute:
         return MaterialPageRoute(
-          builder: (context) =>  MyOrderView(),
+          builder: (context) => const MyOrderView(),
         );
       case RouteConstants.editInformationRoute:
         return MaterialPageRoute(
-          builder: (context) =>  EditInformationView(),
+          builder: (context) => const EditInformationView(),
         );
       case RouteConstants.serviceProviderRoute:
         return MaterialPageRoute(
-          builder: (context) => ServiceProvider(),
+          builder: (context) => const ServiceProvider(),
+        );
+      case RouteConstants.abouteTheAppView:
+        return MaterialPageRoute(
+          builder: (context) => const AbouteTheAppView(),
+        );
+      case RouteConstants.myProjectsView:
+        return MaterialPageRoute(
+          builder: (context) => const MyProjecstView(),
+        );
+      case RouteConstants.uploadProject:
+        return MaterialPageRoute(
+          builder: (context) => const UploadProject(),
         );
     }
 
@@ -103,7 +115,8 @@ class RouteGenerator {
   }
 
   static Route<dynamic> unDefineRoute() => MaterialPageRoute(
-      builder: (_) => const Scaffold(
-            body: Text("noRouteFound"),
-          ));
+        builder: (_) => const Scaffold(
+          body: Text("no Route Found"),
+        ),
+      );
 }

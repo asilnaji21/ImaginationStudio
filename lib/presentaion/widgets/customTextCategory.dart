@@ -8,7 +8,7 @@ class CustomTextCategory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding:  EdgeInsets.only(left: 23),
+      padding: EdgeInsets.only(left: 23),
       child: Align(
         alignment: Alignment.centerLeft,
         child: Text(
@@ -19,4 +19,3 @@ class CustomTextCategory extends StatelessWidget {
     );
   }
 }
-

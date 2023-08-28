@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../widgets/customProfileButton.dart';
 
-class ProfileServiceProviderView extends StatelessWidget {
+cclass ProfileServiceProviderView extends StatelessWidget {
   const ProfileServiceProviderView({super.key});
 
   @override
@@ -22,8 +22,8 @@ class ProfileServiceProviderView extends StatelessWidget {
                     fontWeight: FontWeight.w400),
               ),
             ),
-            const Row(
-              children: [
+            Row(
+              children: const [
                 CircleAvatar(
                   radius: 40,
                   backgroundImage: AssetImage('assets/man.png'),
@@ -52,7 +52,9 @@ class ProfileServiceProviderView extends StatelessWidget {
             ),
             customProfileButton(
                 icon: Icons.production_quantity_limits,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pushNamed(RouteConstants.myCartRoute);
+                },
                 title: "My Project"),
             const SizedBox(
               height: 30,

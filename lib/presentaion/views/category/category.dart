@@ -83,7 +83,7 @@ class _CategoryViewState extends State<CategoryView> {
             const SizedBox(
               height: 30,
             ),
-            ImageCarouselWithIndicators(),
+            const ImageCarouselWithIndicators(),
             const SizedBox(
               height: 10,
             ),

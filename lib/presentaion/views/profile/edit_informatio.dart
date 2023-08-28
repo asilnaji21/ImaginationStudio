@@ -23,7 +23,8 @@ class EditInformationView extends StatelessWidget {
               ),
               const CircleAvatar(
                 radius: 40,
-                backgroundImage: AssetImage('assets/man.png'),
+                backgroundImage: NetworkImage(
+                    "https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80"),
               ),
               const SizedBox(
                 width: 15,

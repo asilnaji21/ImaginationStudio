@@ -29,7 +29,11 @@ class WelcomeView extends StatelessWidget {
                 BaseButton(
                   buttonText: "Sign up",
                   onPressed: () {
+                    /*Navigator.pushNamed(
+                        context, RouteConstants.userSignUpRoute);*/
                     Navigator.of(context).pushNamed(RouteConstants.signUpRoute);
+
+                    //  NavigationManager.pushNamed(RouteConstants.userSignUpRoute);
                   },
                 ),
                 const SizedBox(height: 2),
@@ -42,24 +46,7 @@ class WelcomeView extends StatelessWidget {
                 )
               ],
             ),
-            // Positioned(
-            //   top: 424,
-            //   right: 11,
-            //   child: Padding(
-            //     padding: EdgeInsets.symmetric(horizontal: 10),
-            //     child: ElevatedButton(
-            //       onPressed: () {
-            //         Navigator.of(context).pushNamed(RouteConstants.signInRoute);
-            //       },
-            //       child: Text("Login"),
-            //       style: ElevatedButton.styleFrom(
-            //         backgroundColor: ColorManager.primaryMainEnableColor,
-            //         textStyle: TextStyle(fontSize: 22, color: Colors.white),
-            //       ),
-            //     ),
-            //   ),
-            // ),
-          )
+          ),
         ],
       ),
     );

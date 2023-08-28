@@ -27,8 +27,8 @@ class _MyProfileViewState extends State<MyProfileView> {
                     fontWeight: FontWeight.w400),
               ),
             ),
-          const  Row(
-              children:  [
+            Row(
+              children: const [
                 CircleAvatar(
                   radius: 40,
                   backgroundImage: NetworkImage(
@@ -51,19 +51,39 @@ class _MyProfileViewState extends State<MyProfileView> {
             ),
             customProfileButton(
                 icon: Icons.edit_note_sharp,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context)
+                      .pushNamed(RouteConstants.editInformationRoute);
+                },
                 title: "Edit information"),
             const SizedBox(
               height: 30,
             ),
             customProfileButton(
-                icon: Icons.shopping_cart, onPressed: () {}, title: "My Cart"),
+                icon: Icons.production_quantity_limits,
+                onPressed: () {
+                  Navigator.of(context)
+                      .pushNamed(RouteConstants.myProjectsView);
+                },
+                title: "My Project"),
+            const SizedBox(
+              height: 30,
+            ),
+            customProfileButton(
+                icon: Icons.shopping_cart,
+                onPressed: () {
+                  Navigator.of(context).pushNamed(RouteConstants.myCartRoute);
+                },
+                title: "My Cart"),
             const SizedBox(
               height: 30,
             ),
             customProfileButton(
                 icon: Icons.info_rounded,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context)
+                      .pushNamed(RouteConstants.abouteTheAppView);
+                },
                 title: "About the app"),
             const SizedBox(
               height: 30,
