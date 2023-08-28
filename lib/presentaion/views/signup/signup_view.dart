@@ -87,7 +87,7 @@ class SignUpView extends StatelessWidget {
                 width: 350,
                 onPressed: () {},
                 color: ColorManager.primaryMainColor,
-                text: "Signup",
+                text: "Sign up",
                 colortext: ColorManager.textColor,
               ),
               Row(

@@ -22,13 +22,9 @@ class _MainViewState extends State<MainView> {
 
   static final List<Widget> _pages = <Widget>[
     const HomeView(),
-    SavedView(),
-    Container(
-      color: Colors.red,
-    ),
-    Container(
-      color: Colors.green,
-    ),
+    const SavedView(),
+    const MyOrderView(),
+    const ServiceProvider(),
     const MyProfileView()
   ];
   @override
@@ -101,14 +97,9 @@ class _MainViewState extends State<MainView> {
         automaticallyImplyLeading: false,
         actions: [
           IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.search,
-              color: Colors.grey,
-            ),
-          ),
-          IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushNamed(RouteConstants.myCartRoute);
+            },
             icon: const Icon(
               Icons.shopping_cart,
               color: Colors.grey,

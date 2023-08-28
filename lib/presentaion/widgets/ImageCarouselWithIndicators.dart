@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import '../resources/color_manager.dart';
 
 class ImageCarouselWithIndicators extends StatefulWidget {
+  const ImageCarouselWithIndicators({super.key});
+
   @override
   _ImageCarouselWithIndicatorsState createState() =>
       _ImageCarouselWithIndicatorsState();
@@ -25,7 +27,26 @@ class _ImageCarouselWithIndicatorsState
       children: [
         CarouselSlider(
           items: images.map((imageUrl) {
-            return Image.asset(imageUrl, fit: BoxFit.cover);
+            return ClipRect(
+              clipBehavior: Clip.antiAlias,
+              child: Container(
+                width: 300,
+                height: 150,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  image: DecorationImage(
+                    image: AssetImage(
+                      imageUrl,
+                    ),
+                    fit: BoxFit.cover,
+                  ),
+                  border: Border.all(
+                    color: Colors.white,
+                    width: 2.0,
+                  ),
+                ),
+              ),
+            );
           }).toList(),
           options: CarouselOptions(
             height: 200,
@@ -49,9 +70,9 @@ class _ImageCarouselWithIndicatorsState
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: _currentIndex == index
-                    ? ColorManager.circleIndicatorColor
+                    ? ColorManager.circleIndicatorColor2
                     : ColorManager
-                        .circleIndicatorColor2, // Change colors as needed
+                        .circleIndicatorColor, // Change colors as needed
               ),
             );
           }).toList(),

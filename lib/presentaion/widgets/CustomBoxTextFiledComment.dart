@@ -14,8 +14,8 @@ class CustomBoxTextFiledComment extends StatelessWidget {
         borderRadius: const BorderRadius.all(Radius.circular(10)),
         border: Border.all(color: Colors.black),
       ),
-      margin:const  EdgeInsets.all(10),
-      child:const Padding(
+      margin: const EdgeInsets.all(10),
+      child: const Padding(
         padding: EdgeInsets.all(8),
         child: TextField(
           decoration: InputDecoration(

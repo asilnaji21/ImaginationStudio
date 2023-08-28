@@ -17,8 +17,8 @@ class CustomText extends StatelessWidget {
           text!,
           style: const TextStyle(
               color: ColorManager.blackColor,
-              fontSize: 17,
-              fontFamily: 'assets/aldhabi.ttf'),
+              fontSize: 22,
+              fontWeight: FontWeight.w400),
         ));
   }
 }

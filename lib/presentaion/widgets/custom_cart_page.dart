@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 class CustomMycart extends StatelessWidget {
@@ -16,8 +14,7 @@ class CustomMycart extends StatelessWidget {
         color: const Color.fromARGB(255, 224, 224, 224),
         borderRadius: BorderRadius.circular(15),
       ),
-
-      padding:const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(16.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
@@ -32,12 +29,12 @@ class CustomMycart extends StatelessWidget {
             children: <Widget>[
               Text(
                 productName,
-                style:const  TextStyle(fontSize: 30),
+                style: const TextStyle(fontSize: 30),
               ),
               Text(
                 price,
                 style: const TextStyle(fontSize: 30),
-              ), 
+              ),
             ],
           ),
           const Spacer(),
@@ -45,7 +42,7 @@ class CustomMycart extends StatelessWidget {
             icon: const Icon(Icons.delete),
             onPressed: () {},
           ),
-          const Column(
+          Column(
             children: <Widget>[
               Icon(Icons.add_circle),
               Text("on"),

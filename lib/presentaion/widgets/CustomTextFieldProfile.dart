@@ -4,8 +4,12 @@ import '../resources/color_manager.dart';
 
 class CustomTextFieldProfile extends StatelessWidget {
   String? nameText;
-   CustomTextFieldProfile({
+  IconData? icon;
+  TextEditingController? controller;
+  CustomTextFieldProfile({
     required this.nameText,
+    this.icon,
+    this.controller,
     super.key,
   });
 
@@ -13,19 +17,21 @@ class CustomTextFieldProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
+        SizedBox(
             width: 300,
             height: 55,
             child: TextFormField(
+              controller: controller,
               decoration: InputDecoration(
-                contentPadding: EdgeInsets.only(left: 10, top: 5),
-                hintText:  nameText,
-                hintStyle:const TextStyle(
+                suffixIcon: Icon(icon),
+                contentPadding: const EdgeInsets.only(left: 10, top: 5),
+                hintText: nameText,
+                hintStyle: const TextStyle(
                     fontSize: 29,
                     color: ColorManager.textColor2,
                     fontWeight: FontWeight.w400),
                 border: OutlineInputBorder(
-                  borderSide:const BorderSide(color: ColorManager.borderColor),
+                  borderSide: const BorderSide(color: ColorManager.borderColor),
                   borderRadius: BorderRadius.circular(10.0),
                 ),
               ),

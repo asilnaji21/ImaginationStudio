@@ -5,11 +5,13 @@ import '../../widgets/CustomSelectPayment.dart';
 import '../../widgets/ElevatedButton_custom.dart';
 import '../../widgets/custom_cart_page.dart';
 import '../../widgets/custom_divider.dart';
+
 class MyCart extends StatefulWidget {
   const MyCart({Key? key});
   @override
   State<MyCart> createState() => _MyCartState();
 }
+
 class _MyCartState extends State<MyCart> {
   String selectedPaymentMethod = 'Cash';
   bool isPaymentComplete = false;
@@ -120,19 +122,11 @@ class _MyCartState extends State<MyCart> {
       },
     );
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.shopping_cart,
-              color: Colors.black,
-            ),
-          )
-        ],
         leading: IconButton(
           onPressed: () {},
           icon: const Icon(Icons.arrow_back, color: Colors.black),
@@ -166,9 +160,9 @@ class _MyCartState extends State<MyCart> {
             productName: 'Mirror',
             price: '80\$',
           ),
-          const Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
+            children: const [
               Text(
                 "Total cost: ",
                 style: TextStyle(fontSize: 50),
@@ -198,8 +192,8 @@ class _MyCartState extends State<MyCart> {
             style: TextStyle(fontSize: 37, color: ColorManager.grey2),
           ),
           const CustomDividerWithPadding(),
-          const Row(
-            children: [
+          Row(
+            children: const [
               Expanded(
                 child: Text(
                   "Enter Nearest",
@@ -252,5 +246,3 @@ class _MyCartState extends State<MyCart> {
     );
   }
 }
-
-

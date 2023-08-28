@@ -15,9 +15,12 @@ class MyGridItem extends StatefulWidget {
 }
 
 class _MyGridItemState extends State<MyGridItem> {
-  bool favorite = false;
   @override
   Widget build(BuildContext context) {
+    var isFavorite = Provider.of<AppProvider>(context)
+        .favoriteList
+        .contains(widget.productModel);
+
     return Column(
       children: [
         GestureDetector(
@@ -37,7 +40,7 @@ class _MyGridItemState extends State<MyGridItem> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: IconButton(
-                  icon: favorite
+                  icon: isFavorite
                       ? const Icon(
                           Icons.favorite,
                           color: Colors.red,
@@ -48,8 +51,8 @@ class _MyGridItemState extends State<MyGridItem> {
                           size: 40.0,
                         ),
                   onPressed: () {
-                    favorite = !favorite;
-                    setState(() {});
+                    Provider.of<AppProvider>(context, listen: false)
+                        .addOrRemoveFavorite(widget.productModel);
                   },
                 ),
               ),

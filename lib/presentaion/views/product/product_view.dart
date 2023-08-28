@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../../resources/color_manager.dart';
 import '../../widgets/ColoredCircle.dart';
 import '../../widgets/CustomBoxTextFiledComment.dart';
-import '../../widgets/ElevatedButton_custom.dart';
 import '../../widgets/MyImageCarousel.dart';
 import '../main/domain/model/product_model.dart';
 
@@ -18,6 +17,9 @@ class ProductView extends StatefulWidget {
 class _ProductViewState extends State<ProductView> {
   @override
   Widget build(BuildContext context) {
+    var favorite = Provider.of<AppProvider>(context)
+        .favoriteList
+        .contains(widget.productModel);
     return Scaffold(
       appBar: AppBar(
         actions: [
@@ -118,10 +120,23 @@ class _ProductViewState extends State<ProductView> {
                           ),
                         ),
                       ),
-                      onPressed: () {},
-                      icon: const Icon(Icons.save_alt_rounded),
+                      onPressed: () {
+                        Provider.of<AppProvider>(context, listen: false)
+                            .addOrRemoveFavorite(widget.productModel);
+                      },
+                      icon: favorite
+                          ? const Icon(
+                              Icons.favorite,
+                              color: Colors.red,
+                              size: 40.0,
+                            )
+                          : const Icon(
+                              Icons.favorite_border,
+                              size: 40.0,
+                              color: ColorManager.primaryMainColor,
+                            ),
                       label: const Text(
-                        "save",
+                        "Save",
                         style: TextStyle(
                             color: ColorManager.textColor2, fontSize: 30),
                       )),
