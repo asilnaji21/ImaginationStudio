@@ -18,4 +18,6 @@ class RouteConstants {
   static const String editInformationRoute = "/EditInformationViewRoute";
   static const String profileServiceProviderRoute = "/ProfileServiceProviderRoute";
   static const String serviceProviderRoute = "/ServiceProviderRoute";
+  static const String aboutMeRoute = "/aboutMeRoute";
+  static const String upLoadProjectRoute = "/UpLoadProjectRoute";
 }

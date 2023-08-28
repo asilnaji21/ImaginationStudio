@@ -4,7 +4,9 @@ import 'package:project_app/presentaion/views/category/category.dart';
 import 'package:project_app/presentaion/views/mycart/mycart_view.dart';
 import 'package:project_app/presentaion/views/product/product_view.dart';
 import 'package:project_app/presentaion/views/signup/signup_view.dart';
+import 'package:project_app/presentaion/views/upload/projectupload.dart';
 
+import '../../presentaion/views/About Me/about_me.dart';
 import '../../presentaion/views/My order/myorder.dart';
 import '../../presentaion/views/category/category.dart';
 import '../../presentaion/views/home/home_view.dart';
@@ -96,6 +98,14 @@ class RouteGenerator {
       case RouteConstants.serviceProviderRoute:
         return MaterialPageRoute(
           builder: (context) => ServiceProvider(),
+        );
+      case RouteConstants.aboutMeRoute:
+        return MaterialPageRoute(
+          builder: (context) => AboutMeView(),
+        );
+      case RouteConstants.upLoadProjectRoute:
+        return MaterialPageRoute(
+          builder: (context) => UpLoadProjectView(),
         );
     }
 

@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-
-import '../../resources/color_manager.dart';
 import '../../widgets/CustomContactButton.dart';
 import '../../widgets/CustomImageStackContactServiceProvider.dart';
 import '../../widgets/search_boxCustom.dart';
 
 class ServiceProvider extends StatelessWidget {
   const ServiceProvider({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +12,7 @@ class ServiceProvider extends StatelessWidget {
         const SizedBox(
           height: 60,
         ),
-        SearchBox(),
+        const SearchBox(),
         const SizedBox(
           height: 60,
         ),
@@ -25,7 +22,7 @@ class ServiceProvider extends StatelessWidget {
           nameProvider: 'Sara Ali',
           imagePathPerson: 'assets/woman.png',
         ),
-        CustomContactButton(),
+        const CustomContactButton(),
         const SizedBox(
           height: 33,
         ),
@@ -35,7 +32,7 @@ class ServiceProvider extends StatelessWidget {
           nameProvider: 'Kayan Ali',
           imagePathPerson: 'assets/man.png',
         ),
-        CustomContactButton(),
+        const CustomContactButton(),
         const SizedBox(
           height: 33,
         ),

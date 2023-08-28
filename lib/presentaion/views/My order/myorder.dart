@@ -8,8 +8,8 @@ class MyOrderView extends StatefulWidget {
 }
 
 class _MyOrderViewState extends State<MyOrderView> {
-  String selectedValue = "Orders by date"; // القيمة المحددة ابتدائيًا
-  bool showRadioButtons = false; // متغير للتحكم في رؤية Radio Buttons
+  String selectedValue = "Orders by date";
+  bool showRadioButtons = false; 
 
   @override
   Widget build(BuildContext context) {
@@ -43,13 +43,13 @@ class _MyOrderViewState extends State<MyOrderView> {
                 onChanged: (String? newValue) {
                   setState(() {
                     selectedValue = newValue!;
-                    // بعد تغيير القيمة المحددة، قم بتغيير قيمة showRadioButtons
+                
                     showRadioButtons = true;
                   });
                 },
               ),
             ),
-            if (showRadioButtons) // عرض Radio Buttons إذا كان showRadioButtons هو true
+            if (showRadioButtons) 
               Column(
                 children: <Widget>[
                   RadioListTile<String>(

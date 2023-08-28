@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
             const AppBarTheme(backgroundColor: Colors.white, elevation: 0),
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: RouteConstants.serviceProviderRoute,
+      initialRoute: RouteConstants.upLoadProjectRoute,
       onGenerateRoute: RouteGenerator.generateRoutes,
     );
   }

@@ -4,7 +4,7 @@ class ColorManager {
   static const Color primaryMainEnableColor = Color(0xffC68570);
   static const Color primaryMainColor = Color(0xff9C9E8A);
   static const Color primaryButtonColor = Color(0xffBDC8C2);
-  static const Color blue = Color(0xff6884A0CC);
+  static const Color blue = Color(0xffc6884A0CC);
   static const Color borderColor = Color(0xff707070);
   static const Color blackColor = Color(0xff050505);
   static const Color textColor = Color(0xffEBE8E5);
