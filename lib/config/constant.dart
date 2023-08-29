@@ -1,3 +1,5 @@
+import 'package:project_app/presentaion/views/serviceprovider/domain/model/service_provider_model.dart';
+
 import '../presentaion/views/main/domain/model/categories_model.dart';
 import '../presentaion/views/main/domain/model/product_model.dart';
 
@@ -621,7 +623,8 @@ class Constant {
       productCategory: "Desks",
       productDescription:
           "Enhance your workspace with this sleek glass top writing desk. It's modern and functional.",
-      productImage: "https://images.example.com/desk-010.jpg",
+      productImage:
+          "https://images.unsplash.com/photo-1618506469810-282bef2b30b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8RGVza3N8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
     ),
     ProductModel(
       productQuantity: "6",
@@ -743,7 +746,8 @@ class Constant {
       productCategory: "Living Rooms",
       productDescription:
           "Relax in style with this comfortable reclining armchair. It's perfect for unwinding after a long day.",
-      productImage: "https://images.example.com/living-room-004.jpg",
+      productImage:
+          "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8TGl2aW5nJTIwUm9vbXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
     ),
     ProductModel(
       productQuantity: "3",
@@ -785,7 +789,8 @@ class Constant {
       productCategory: "Living Rooms",
       productDescription:
           "Complete your living room with this coffee table featuring ample storage space. It's both functional and stylish.",
-      productImage: "https://images.example.com/living-room-003.jpg",
+      productImage:
+          "hhttps://images.unsplash.com/photo-1606074280798-2dabb75ce10c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8TGl2aW5nJTIwUm9vbXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
       productQuantity: "12",
     ),
     ProductModel(
@@ -928,7 +933,8 @@ class Constant {
       productCategory: "Kitchen",
       productDescription:
           "Elevate your culinary skills with this chef's knife set. It includes a variety of knives for all your chopping needs.",
-      productImage: "https://images.example.com/kitchen-003.jpg",
+      productImage:
+          "https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8S2l0Y2hlbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
       productQuantity: "12",
     ),
     ProductModel(
@@ -1256,7 +1262,8 @@ class Constant {
       productCategory: "Accessories",
       productDescription:
           "Display your favorite flowers with this set of decorative vases. They come in various shapes and colors to suit your style.",
-      productImage: "https://images.example.com/accessory-017.jpg",
+      productImage:
+          "https://images.unsplash.com/photo-1515938541268-cb8a388444b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8QWNjZXNzb3JpZXMlMjBob21lfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
       productQuantity: "9",
     ),
     ProductModel(
@@ -1345,7 +1352,8 @@ class Constant {
       productCategory: "Mirrors",
       productDescription:
           "Upgrade your bathroom with this sleek and functional vanity mirror. It's perfect for grooming and makeup application.",
-      productImage: "https://images.example.com/mirror-005.jpg",
+      productImage:
+          "https://images.unsplash.com/photo-1520783077-5c05dd1fdc99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWlycm9yfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
       productQuantity: "12",
     ),
     ProductModel(
@@ -1467,7 +1475,8 @@ class Constant {
       productCategory: "Doors",
       productDescription:
           "Ensure the safety of your home with this heavy-duty steel security door. It's tough, reliable, and built to last.",
-      productImage: "https://images.example.com/door-005.jpg",
+      productImage:
+          "https://images.unsplash.com/photo-1558725177-79763c6e9014?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZG9vcnN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
     ),
     ProductModel(
       productQuantity: "8",

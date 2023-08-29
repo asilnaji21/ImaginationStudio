@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:project_app/app/routes/route_constants.dart';
+import 'package:project_app/app_provider.dart';
+import 'package:provider/provider.dart';
 
 import '../../resources/color_manager.dart';
-import '../../widgets/ColoredCircle.dart';
-import '../../widgets/CustomBoxTextFiledComment.dart';
-import '../../widgets/MyImageCarousel.dart';
+import '../../widgets/colored_circle.dart';
+import '../../widgets/custom_box_text_filed_comment.dart';
+import '../../widgets/my_image_carousel.dart';
 import '../main/domain/model/product_model.dart';
 
 class ProductView extends StatefulWidget {
@@ -24,7 +27,9 @@ class _ProductViewState extends State<ProductView> {
       appBar: AppBar(
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushNamed(RouteConstants.myCartRoute);
+            },
             icon: const Icon(
               Icons.shopping_cart,
               color: ColorManager.borderColor,
@@ -32,7 +37,9 @@ class _ProductViewState extends State<ProductView> {
           )
         ],
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: const Icon(Icons.arrow_back, color: ColorManager.borderColor),
         ),
       ),
@@ -74,25 +81,25 @@ class _ProductViewState extends State<ProductView> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 27),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 27),
               child: Row(
                 children: [
                   ColoredCircle(color: ColorManager.circleColorGreen),
-                  const SizedBox(
+                  SizedBox(
                     width: 9,
                   ),
                   ColoredCircle(color: ColorManager.circleColorGrid),
-                  const SizedBox(
+                  SizedBox(
                     width: 9,
                   ),
                   ColoredCircle(color: ColorManager.circleColorBinkh),
                 ],
               ),
             ),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
+              children: [
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 30),
                   child: Text(
@@ -145,7 +152,12 @@ class _ProductViewState extends State<ProductView> {
                   width: 16,
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    var appProvider =
+                        Provider.of<AppProvider>(context, listen: false);
+                    appProvider.addToCart(widget.productModel);
+                    appProvider.isInCart = !appProvider.isInCart;
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: ColorManager.primaryMainColor,
                     shape: RoundedRectangleBorder(

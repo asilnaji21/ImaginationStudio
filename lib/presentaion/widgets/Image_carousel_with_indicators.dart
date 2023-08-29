@@ -7,11 +7,11 @@ class ImageCarouselWithIndicators extends StatefulWidget {
   const ImageCarouselWithIndicators({super.key});
 
   @override
-  _ImageCarouselWithIndicatorsState createState() =>
-      _ImageCarouselWithIndicatorsState();
+  ImageCarouselWithIndicatorsState createState() =>
+      ImageCarouselWithIndicatorsState();
 }
 
-class _ImageCarouselWithIndicatorsState
+class ImageCarouselWithIndicatorsState
     extends State<ImageCarouselWithIndicators> {
   int _currentIndex = 0;
 

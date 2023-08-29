@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:project_app/presentaion/widgets/custom_logo.dart';
 
-import '../../../app/routes/navigator.dart';
 import '../../../app/routes/route_constants.dart';
 import '../../resources/color_manager.dart';
 import '../../resources/image_assets.dart';
-import '../../widgets/Base_button.dart';
+import '../../widgets/base_button.dart';
 
 class WelcomeView extends StatelessWidget {
   const WelcomeView({Key? key}) : super(key: key);
@@ -20,6 +20,7 @@ class WelcomeView extends StatelessWidget {
             width: 720,
             height: 941,
           ),
+          const CustomLogo(),
           Align(
             alignment: Alignment.centerRight,
             child: Column(

@@ -1,3 +1,11 @@
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/material.dart';
+import 'package:project_app/presentaion/views/serviceprovider/domain/model/service_provider_model.dart';
+import 'package:project_app/presentaion/widgets/custom_contact_button.dart';
+import 'package:project_app/presentaion/widgets/custom_star_rating.dart';
+import 'package:project_app/presentaion/widgets/custom_designer_detailes.dart';
+import 'package:project_app/presentaion/widgets/custom_divider.dart';
+
 class AboutMeView extends StatefulWidget {
   final ServiceProviderModel model;
   const AboutMeView({super.key, required this.model});
@@ -28,11 +36,11 @@ class _AboutMeViewState extends State<AboutMeView> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Row(
-                    children: const [
+                    children: [
                       Icon(
                         Icons.share,
                         size: 33,
@@ -48,8 +56,8 @@ class _AboutMeViewState extends State<AboutMeView> {
                   ),
                 ],
               ),
-              Row(
-                children: const [
+              const Row(
+                children: [
                   SizedBox(
                     width: 20,
                   ),

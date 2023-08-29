@@ -5,9 +5,9 @@ class NavigationConfiguration {
   static NavigationConfiguration navigationConfiguration =
       NavigationConfiguration._();
   final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
-  void navigateAndFinish(context, Widget) => Navigator.pushAndRemoveUntil(
+  void navigateAndFinish(context, widget) => Navigator.pushAndRemoveUntil(
       context,
-      MaterialPageRoute(builder: (context) => Widget),
+      MaterialPageRoute(builder: (context) => widget),
       (Route<dynamic> route) => false);
 
   void navigateTo(context, widget) =>

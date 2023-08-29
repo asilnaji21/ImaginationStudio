@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../resources/color_manager.dart';
 
 class CustomContainerCard extends StatelessWidget {
-  String? hintText;
-  CustomContainerCard({
+  final String? hintText;
+  const CustomContainerCard({
     required this.hintText,
     super.key,
   });
@@ -23,7 +23,7 @@ class CustomContainerCard extends StatelessWidget {
       ),
       child: TextFormField(
         decoration: InputDecoration(
-          contentPadding: EdgeInsets.fromLTRB(13, 21, 241, 0),
+          contentPadding: const EdgeInsets.fromLTRB(13, 21, 241, 0),
           hintText: hintText,
           hintStyle:
               const TextStyle(fontSize: 30, color: ColorManager.textColor2),

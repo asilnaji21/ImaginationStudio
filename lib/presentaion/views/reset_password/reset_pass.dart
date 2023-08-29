@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../app/routes/route_constants.dart';
 import '../../resources/color_manager.dart';
-import '../../widgets/ElevatedButton_custom.dart';
+import '../../widgets/elevated_button_custom.dart';
 import '../../widgets/text_custom.dart';
 import '../../widgets/textformfiled_custom.dart';
 
@@ -28,24 +28,24 @@ class ResetPassView extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              CustomText(text: "Email"),
-              CustomTextFormField(
+              const CustomText(text: "Email"),
+              const CustomTextFormField(
                 icon: Icons.email_outlined,
                 nameText: "Enter Email",
               ),
               const SizedBox(
                 height: 18,
               ),
-              CustomText(text: "Password"),
-              CustomTextFormField(
+              const CustomText(text: "Password"),
+              const CustomTextFormField(
                   keyboardType: TextInputType.visiblePassword,
                   nameText: "********",
                   icon: Icons.visibility_off_outlined),
               const SizedBox(
                 height: 18,
               ),
-              CustomText(text: "Confirm Password"),
-              CustomTextFormField(
+              const CustomText(text: "Confirm Password"),
+              const CustomTextFormField(
                   keyboardType: TextInputType.visiblePassword,
                   nameText: "********",
                   icon: Icons.visibility_off_outlined),

@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:project_app/app/routes/route_constants.dart';
+import 'package:project_app/presentaion/views/about_app/about_aoo_view.dart';
 import 'package:project_app/presentaion/views/category/category.dart';
+import 'package:project_app/presentaion/views/my_project/my_project.dart';
 import 'package:project_app/presentaion/views/mycart/mycart_view.dart';
-import 'package:project_app/presentaion/views/product/product_view.dart';
 import 'package:project_app/presentaion/views/signup/signup_view.dart';
+import 'package:project_app/presentaion/views/upload_project/upload_project.dart';
 
 import '../../presentaion/views/My order/myorder.dart';
-import '../../presentaion/views/category/category.dart';
 import '../../presentaion/views/home/home_view.dart';
 import '../../presentaion/views/local_manufactures/local_manufactures.dart';
 import '../../presentaion/views/main/main_view.dart';
-import '../../presentaion/views/mycart/mycart_view.dart';
-import '../../presentaion/views/product/product_view.dart';
 import '../../presentaion/views/profile/edit_informatio.dart';
-import '../../presentaion/views/profile/profile_serviceProvider.dart';
 import '../../presentaion/views/profile/profile_view.dart';
 import '../../presentaion/views/reset_password/reset_pass.dart';
 import '../../presentaion/views/reset_password/reset_password.dart';
@@ -22,7 +20,6 @@ import '../../presentaion/views/serviceprovider/contact_service_provider.dart';
 import '../../presentaion/views/signin/signin_view.dart';
 import '../../presentaion/views/signup/user_signup_view.dart';
 import '../../presentaion/views/welcome/welcome_view.dart';
-import 'route_constants.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoutes(RouteSettings settings) {

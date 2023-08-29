@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project_app/presentaion/resources/color_manager.dart';
 import '../../../app/routes/route_constants.dart';
-import '../../widgets/ElevatedButton_custom.dart';
+import '../../widgets/elevated_button_custom.dart';
 import '../../widgets/text_custom.dart';
 import '../../widgets/textformfiled_custom.dart';
 import '../signup/user_signup_view.dart';
@@ -17,16 +17,16 @@ class SignInView extends StatelessWidget {
           scrollDirection: Axis.vertical,
           child: Column(
             children: [
-              CustomText(text: "Email"),
-              CustomTextFormField(
+              const CustomText(text: "Email"),
+              const CustomTextFormField(
                 icon: Icons.email_outlined,
                 nameText: "Enter Email",
               ),
               const SizedBox(
                 height: 18,
               ),
-              CustomText(text: "Password"),
-              CustomTextFormField(
+              const CustomText(text: "Password"),
+              const CustomTextFormField(
                 icon: Icons.visibility_off,
                 nameText: "*******",
               ),
