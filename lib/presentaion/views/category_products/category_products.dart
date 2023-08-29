@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../config/constant.dart';
 import '../../widgets/product_item.dart';
-import '../../widgets/search_boxCustom.dart';
+import '../../widgets/search_box_custom.dart';
 import '../main/domain/model/product_model.dart';
 import '../product/product_view.dart';
 

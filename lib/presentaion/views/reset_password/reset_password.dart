@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../app/routes/route_constants.dart';
 import '../../resources/color_manager.dart';
-import '../../widgets/ElevatedButton_custom.dart';
+import '../../widgets/elevated_button_custom.dart';
 import '../../widgets/text_custom.dart';
 import '../../widgets/textformfiled_custom.dart';
 import '../signup/user_signup_view.dart';
@@ -32,8 +32,8 @@ class ResetPasswordView extends StatelessWidget {
                   fontSize: 30,
                 ),
               ),
-              CustomText(text: "Email"),
-              CustomTextFormField(
+              const CustomText(text: "Email"),
+              const CustomTextFormField(
                 icon: Icons.email_outlined,
                 nameText: "Enter Email",
               ),

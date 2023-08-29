@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import '../resources/color_manager.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  String? nameText;
-  IconData? icon;
-  Color? iconColor;
-  bool? readOnly;
-  TextInputType? keyboardType;
-  TextEditingController? controller;
-  void Function()? onPressed;
-  CustomTextFormField({
+  final String? nameText;
+  final IconData? icon;
+  final Color? iconColor;
+  final bool? readOnly;
+  final TextInputType? keyboardType;
+  final TextEditingController? controller;
+  final void Function()? onPressed;
+  const CustomTextFormField({
     required this.nameText,
     this.icon,
     this.controller,

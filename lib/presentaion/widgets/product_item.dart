@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:project_app/app_provider.dart';
+import 'package:provider/provider.dart';
 
 import '../views/main/domain/model/product_model.dart';
 

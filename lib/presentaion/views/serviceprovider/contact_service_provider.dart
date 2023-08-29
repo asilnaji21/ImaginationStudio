@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:project_app/config/constant.dart';
+import 'package:project_app/presentaion/views/serviceprovider/domain/model/service_provider_model.dart';
 
-import '../../resources/color_manager.dart';
-import '../../widgets/CustomContactButton.dart';
-import '../../widgets/CustomImageStackContactServiceProvider.dart';
-import '../../widgets/search_boxCustom.dart';
+import '../../widgets/custom_image_stack_contact_service_provider.dart';
+import '../../widgets/search_box_custom.dart';
 
 class ServiceProvider extends StatefulWidget {
   const ServiceProvider({super.key});

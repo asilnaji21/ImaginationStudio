@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:project_app/presentaion/resources/color_manager.dart';
 import 'package:project_app/presentaion/views/signup/user_signup_view.dart';
-import 'package:project_app/presentaion/widgets/ElevatedButton_custom.dart';
-import 'package:project_app/presentaion/widgets/textbutton_custom.dart';
+import 'package:project_app/presentaion/widgets/elevated_button_custom.dart';
 import 'package:project_app/presentaion/widgets/textformfiled_custom.dart';
 import '../../../app/routes/route_constants.dart';
 import '../../widgets/avatar_cam.dart';
-import '../../widgets/dropDawnmenu_hidden.dart';
+import '../../widgets/drop_dawnmenu_hidden.dart';
 import '../../widgets/text_custom.dart';
 
 class SignUpView extends StatelessWidget {
@@ -20,64 +19,83 @@ class SignUpView extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(children: [
               const AvatarCamera(),
-              CustomText(text: "Name"),
-              CustomTextFormField(nameText: "Enter name", icon: Icons.person),
+              const CustomText(text: "Name"),
+              const CustomTextFormField(
+                  nameText: "Enter name", icon: Icons.person),
               const SizedBox(
                 height: 18,
               ),
-              CustomText(text: "Email"),
-              CustomTextFormField(nameText: "Enter email", icon: Icons.email),
+              const CustomText(text: "Email"),
+              const CustomTextFormField(
+                nameText: "Enter email",
+                icon: Icons.email,
+                keyboardType: TextInputType.emailAddress,
+              ),
               const SizedBox(
                 height: 18,
               ),
-              CustomText(text: "Phone"),
-              CustomTextFormField(
-                  nameText: "+972 599999764", icon: Icons.phone),
+              const CustomText(text: "Phone"),
+              const CustomTextFormField(
+                  keyboardType: TextInputType.phone,
+                  nameText: "+972 599999764",
+                  icon: Icons.phone),
               const SizedBox(
                 height: 18,
               ),
-              CustomText(text: "Password"),
-              CustomTextFormField(
-                  nameText: "********", icon: Icons.visibility_off),
+              const CustomText(text: "Password"),
+              const CustomTextFormField(
+                  keyboardType: TextInputType.visiblePassword,
+                  nameText: "********",
+                  icon: Icons.visibility_off),
               const SizedBox(
                 height: 18,
               ),
-              CustomText(text: "confirm Password"),
-              CustomTextFormField(
-                  nameText: "Enter email", icon: Icons.visibility_off),
+              const CustomText(text: "confirm Password"),
+              const CustomTextFormField(
+                  keyboardType: TextInputType.visiblePassword,
+                  nameText: "********",
+                  icon: Icons.visibility_off),
               const SizedBox(
                 height: 18,
               ),
-              CustomText(text: "Website"),
-              CustomTextFormField(
-                  nameText: "Enter email", icon: Icons.web_stories),
+              const CustomText(text: "Website"),
+              const CustomTextFormField(
+                  keyboardType: TextInputType.url,
+                  nameText: "Enter website",
+                  icon: Icons.web_stories),
               const SizedBox(
                 height: 18,
               ),
-              CustomText(text: "address"),
-              CustomTextFormField(
-                  nameText: "Enter email", icon: Icons.location_city_sharp),
+              const CustomText(text: "address"),
+              const CustomTextFormField(
+                  keyboardType: TextInputType.streetAddress,
+                  nameText: "Enter address",
+                  icon: Icons.location_city_sharp),
               const SizedBox(
                 height: 18,
               ),
-              CustomText(text: "Graduate"),
-              CustomTextFormField(
+              const CustomText(text: "Graduate"),
+              const CustomTextFormField(
                   nameText: "Enter Graduate", icon: Icons.currency_yen_sharp),
               const SizedBox(
                 height: 18,
               ),
-              CustomText(text: "Select category"),
+              const CustomText(text: "Select category"),
               const CustomDropDawnButton(),
               const SizedBox(
                 height: 18,
               ),
-              CustomText(text: "Price"),
-              CustomTextFormField(nameText: "\$", icon: Icons.price_change),
+              const CustomText(text: "Price"),
+              const CustomTextFormField(
+                nameText: "\$",
+                icon: Icons.price_change,
+                keyboardType: TextInputType.number,
+              ),
               const SizedBox(
                 height: 18,
               ),
-              CustomText(text: "Description"),
-              CustomTextFormField(
+              const CustomText(text: "Description"),
+              const CustomTextFormField(
                   nameText: "Enter Description",
                   icon: Icons.currency_yen_sharp),
               const SizedBox(

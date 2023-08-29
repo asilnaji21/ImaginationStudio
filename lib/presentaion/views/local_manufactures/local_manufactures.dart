@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 
 import '../../resources/color_manager.dart';
-import '../../widgets/ElevatedButton_custom.dart';
+import '../../widgets/elevated_button_custom.dart';
 import '../../widgets/text_custom.dart';
 import '../../widgets/textformfiled_custom.dart';
 import '../../widgets/wood_type_drop_dawn_menu.dart';
@@ -37,7 +37,7 @@ class _LocalManufacturesRoute extends State<LocalManufacturesRoute> {
             child: ColorPicker(
               pickerColor: selectedColor,
               onColorChanged: changeColor,
-              showLabel: true,
+              //  showLabel: true,
               pickerAreaHeightPercent: 0.8,
             ),
           ),
@@ -85,16 +85,16 @@ class _LocalManufacturesRoute extends State<LocalManufacturesRoute> {
                     color: Colors.black,
                     fontWeight: FontWeight.w400),
               ),
-              CustomText(text: "Name"),
-              CustomTextFormField(
+              const CustomText(text: "Name"),
+              const CustomTextFormField(
                 icon: Icons.person_outline,
                 nameText: "Enter name",
               ),
               const SizedBox(
                 height: 18,
               ),
-              CustomText(text: "Phone"),
-              CustomTextFormField(
+              const CustomText(text: "Phone"),
+              const CustomTextFormField(
                 keyboardType: TextInputType.phone,
                 icon: Icons.phone,
                 nameText: "+972-1234-56789",
@@ -102,21 +102,21 @@ class _LocalManufacturesRoute extends State<LocalManufacturesRoute> {
               const SizedBox(
                 height: 18,
               ),
-              CustomText(text: "Wood Type"),
+              const CustomText(text: "Wood Type"),
               const CustomWoodTypeDropDawnButton(),
               const SizedBox(
                 height: 18,
               ),
-              Row(
+              const Row(
                 children: [
                   CustomText(text: "Length"),
-                  const SizedBox(
+                  SizedBox(
                     width: 130,
                   ),
                   CustomText(text: "Width"),
                 ],
               ),
-              Row(
+              const Row(
                 children: [
                   Expanded(
                     child: CustomTextFormField(
@@ -124,13 +124,13 @@ class _LocalManufacturesRoute extends State<LocalManufacturesRoute> {
                       nameText: "Enter length",
                     ),
                   ),
-                  const SizedBox(
+                  SizedBox(
                     width: 10,
                   ),
-                  const SizedBox(
+                  SizedBox(
                     width: 10,
                   ),
-                  const SizedBox(
+                  SizedBox(
                     width: 10,
                   ),
                   Expanded(
@@ -144,7 +144,7 @@ class _LocalManufacturesRoute extends State<LocalManufacturesRoute> {
               const SizedBox(
                 height: 18,
               ),
-              CustomText(text: "Color"),
+              const CustomText(text: "Color"),
               CustomTextFormField(
                 controller: textEditingController,
                 onPressed: openColorPickerDialog,
@@ -156,16 +156,16 @@ class _LocalManufacturesRoute extends State<LocalManufacturesRoute> {
               const SizedBox(
                 height: 18,
               ),
-              CustomText(text: "Upload image"),
-              CustomTextFormField(
+              const CustomText(text: "Upload image"),
+              const CustomTextFormField(
                 icon: Icons.drive_folder_upload,
                 nameText: "",
               ),
               const SizedBox(
                 height: 18,
               ),
-              CustomText(text: "Upload gallery"),
-              CustomTextFormField(
+              const CustomText(text: "Upload gallery"),
+              const CustomTextFormField(
                 icon: Icons.drive_folder_upload,
                 nameText: "",
               ),

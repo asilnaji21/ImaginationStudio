@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import '../resources/color_manager.dart';
 
 class CustomElevatedButton extends StatelessWidget {
-  String? text;
-  Color? colortext;
-  Color? color;
-  double? height, width;
-  void Function()? onPressed;
-  double? fontSize;
-  CustomElevatedButton({
+  final String? text;
+  final Color? colortext;
+  final Color? color;
+  final double? height, width;
+  final void Function()? onPressed;
+  final double? fontSize;
+  const CustomElevatedButton({
     required this.color,
     required this.text,
     this.height,

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:project_app/presentaion/widgets/custom_logo.dart';
 
 import '../../../app/routes/route_constants.dart';
 import '../../resources/color_manager.dart';
 import '../../resources/image_assets.dart';
-import '../../widgets/ElevatedButton_custom.dart';
+import '../../widgets/elevated_button_custom.dart';
 import '../../widgets/avatar_cam.dart';
 import '../../widgets/text_custom.dart';
 import '../../widgets/textbutton_custom.dart';
@@ -29,17 +30,24 @@ Container customBackground({required Widget child, double? top}) {
           fit: BoxFit.fill,
         ),
       ),
-      child: Container(
-          margin: const EdgeInsets.only(top: 250),
-          decoration: const BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(40),
-              topRight: Radius.circular(40),
-            ),
+      child: Column(
+        children: [
+          const CustomLogo(),
+          Expanded(
+            child: Container(
+                //     margin: const EdgeInsets.only(top: 20),
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(40),
+                    topRight: Radius.circular(40),
+                  ),
+                ),
+                padding: EdgeInsets.only(top: top ?? 30.0, left: 50, right: 50),
+                child: child),
           ),
-          padding: EdgeInsets.only(top: top ?? 30.0, left: 50, right: 50),
-          child: child));
+        ],
+      ));
 }
 
 class UserSignUpBody extends StatelessWidget {
@@ -53,13 +61,14 @@ class UserSignUpBody extends StatelessWidget {
       scrollDirection: Axis.vertical,
       child: Column(children: [
         const AvatarCamera(),
-        CustomText(text: "Name"),
-        CustomTextFormField(nameText: "Enter name", icon: Icons.person_outline),
+        const CustomText(text: "Name"),
+        const CustomTextFormField(
+            nameText: "Enter name", icon: Icons.person_outline),
         const SizedBox(
           height: 18,
         ),
-        CustomText(text: "Email"),
-        CustomTextFormField(
+        const CustomText(text: "Email"),
+        const CustomTextFormField(
           nameText: "Enter email",
           icon: Icons.email_outlined,
           keyboardType: TextInputType.emailAddress,
@@ -67,24 +76,24 @@ class UserSignUpBody extends StatelessWidget {
         const SizedBox(
           height: 18,
         ),
-        CustomText(text: "Phone"),
-        CustomTextFormField(
+        const CustomText(text: "Phone"),
+        const CustomTextFormField(
             keyboardType: TextInputType.phone,
             nameText: "+972 599999764",
             icon: Icons.phone_rounded),
         const SizedBox(
           height: 18,
         ),
-        CustomText(text: "Password"),
-        CustomTextFormField(
+        const CustomText(text: "Password"),
+        const CustomTextFormField(
             keyboardType: TextInputType.visiblePassword,
             nameText: "********",
             icon: Icons.visibility_off_outlined),
         const SizedBox(
           height: 18,
         ),
-        CustomText(text: "Confirm Password"),
-        CustomTextFormField(
+        const CustomText(text: "Confirm Password"),
+        const CustomTextFormField(
             keyboardType: TextInputType.visiblePassword,
             nameText: "********",
             icon: Icons.visibility_off_outlined),
