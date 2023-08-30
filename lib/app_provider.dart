@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:movies_app/presentaion/views/main/domain/model/product_model.dart';
+
+import 'package:project_app/presentaion/views/main/domain/model/product_model.dart';
 
 class AppProvider extends ChangeNotifier {
   List<ProductModel> favoriteList = [];

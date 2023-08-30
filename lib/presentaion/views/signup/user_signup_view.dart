@@ -1,4 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:project_app/core/providerstate/firebase_auth_methods.dart';
+import 'package:provider/provider.dart';
 
 import '../../../app/routes/route_constants.dart';
 import '../../resources/color_manager.dart';
@@ -11,6 +14,7 @@ import '../../widgets/textformfiled_custom.dart';
 
 class UserSignUpView extends StatelessWidget {
   const UserSignUpView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,72 +46,164 @@ Container customBackground({required Widget child, double? top}) {
           child: child));
 }
 
-class UserSignUpBody extends StatelessWidget {
+class UserSignUpBody extends StatefulWidget {
   const UserSignUpBody({
     Key? key,
   }) : super(key: key);
 
   @override
+  State<UserSignUpBody> createState() => _UserSignUpBodyState();
+}
+
+class _UserSignUpBodyState extends State<UserSignUpBody> {
+  final _formKey = GlobalKey<FormState>();
+  TextEditingController _nameController = TextEditingController();
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _phoneController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+  TextEditingController _confirmPasswordController = TextEditingController();
+
+  final FirebaseAuth auth = FirebaseAuth.instance;
+  void signUpUser() async {
+    await context.read<FirebaseAuthMethods>().signUpWithEmail(
+          email: _emailController.text,
+          password: _passwordController.text,
+          context: context,
+        );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _nameController = TextEditingController();
+    _emailController = TextEditingController();
+    _phoneController = TextEditingController();
+    _passwordController = TextEditingController();
+    _confirmPasswordController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    _nameController.dispose();
+    _emailController.dispose();
+    _phoneController.dispose();
+    _passwordController.dispose();
+    _confirmPasswordController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
-      child: Column(children: [
-        const AvatarCamera(),
-        CustomText(text: "Name"),
-        CustomTextFormField(nameText: "Enter name", icon: Icons.person_outline),
-        const SizedBox(
-          height: 18,
-        ),
-        CustomText(text: "Email"),
-        CustomTextFormField(
-          nameText: "Enter email",
-          icon: Icons.email_outlined,
-          keyboardType: TextInputType.emailAddress,
-        ),
-        const SizedBox(
-          height: 18,
-        ),
-        CustomText(text: "Phone"),
-        CustomTextFormField(
+      child: Form(
+        key: _formKey,
+        child: Column(children: [
+          const AvatarCamera(),
+          CustomText(text: "Name"),
+          CustomTextFormField(
+            nameText: "Enter name",
+            icon: Icons.person_outline,
+            validator: (value) {
+              if (value!.isEmpty) {
+                return "Please enter your Name";
+              }
+              return null;
+            },
+            controller: _nameController,
+          ),
+          const SizedBox(
+            height: 18,
+          ),
+          CustomText(text: "Email"),
+          CustomTextFormField(
+            nameText: "Enter email",
+            icon: Icons.email_outlined,
+            keyboardType: TextInputType.emailAddress,
+            validator: (value) {
+              if (value!.isEmpty) {
+                return "Please enter your email";
+              }
+              return null;
+            },
+            controller: _emailController,
+          ),
+          const SizedBox(
+            height: 18,
+          ),
+          CustomText(text: "Phone"),
+          CustomTextFormField(
             keyboardType: TextInputType.phone,
             nameText: "+972 599999764",
-            icon: Icons.phone_rounded),
-        const SizedBox(
-          height: 18,
-        ),
-        CustomText(text: "Password"),
-        CustomTextFormField(
-            keyboardType: TextInputType.visiblePassword,
-            nameText: "********",
-            icon: Icons.visibility_off_outlined),
-        const SizedBox(
-          height: 18,
-        ),
-        CustomText(text: "Confirm Password"),
-        CustomTextFormField(
-            keyboardType: TextInputType.visiblePassword,
-            nameText: "********",
-            icon: Icons.visibility_off_outlined),
-        const SizedBox(
-          height: 18,
-        ),
-        CustomElevatedButton(
-          color: ColorManager.primaryMainColor,
-          text: "Sign up",
-          colortext: ColorManager.textColor,
-          width: 350,
-          onPressed: () {},
-          height: 50,
-        ),
-        const SizedBox(
-          height: 18,
-        ),
-        CustomTextButton(
-            onPressed: () {
-              Navigator.of(context).pushNamed(RouteConstants.signInRoute);
+            icon: Icons.phone_rounded,
+            validator: (value) {
+              if (value!.isEmpty) {
+                return "Please enter your phone";
+              }
+              return null;
             },
-            text: "Or Sign In by")
-      ]),
+            controller: _phoneController,
+          ),
+          const SizedBox(
+            height: 18,
+          ),
+          CustomText(text: "Password"),
+          CustomTextFormField(
+            keyboardType: TextInputType.visiblePassword,
+            nameText: "********",
+            icon: Icons.visibility_off_outlined,
+            validator: (value) {
+              if (value!.isEmpty) {
+                return "Please enter your Password";
+              }
+              return null;
+            },
+            controller: _passwordController,
+          ),
+          const SizedBox(
+            height: 18,
+          ),
+          CustomText(text: "Confirm Password"),
+          CustomTextFormField(
+            keyboardType: TextInputType.visiblePassword,
+            nameText: "********",
+            icon: Icons.visibility_off_outlined,
+            validator: (value) {
+              if (value!.isEmpty) {
+                return "Please enter your confirmPassword";
+              }
+              return null;
+            },
+            controller: _confirmPasswordController,
+          ),
+          const SizedBox(
+            height: 18,
+          ),
+          CustomElevatedButton(
+            color: ColorManager.primaryMainColor,
+            text: "Sign up",
+            colortext: ColorManager.textColor,
+            width: 350,
+            onPressed: () {
+              if (_formKey.currentState!.validate()) {
+                signUpUser();
+                Navigator.of(context).pushNamed(RouteConstants.signInRoute);
+              }
+            },
+            height: 50,
+          ),
+          const SizedBox(
+            height: 18,
+          ),
+          CustomTextButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed(RouteConstants.signInRoute);
+              },
+              text: "Or Sign In by")
+        ]),
+      ),
     );
   }
+
+
 }

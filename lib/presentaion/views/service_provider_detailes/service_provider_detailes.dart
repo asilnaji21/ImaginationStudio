@@ -1,3 +1,12 @@
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/material.dart';
+
+import '../../widgets/CustomContactButton.dart';
+import '../../widgets/CustomStarRating.dart';
+import '../../widgets/custom_designer_detailes.dart';
+import '../../widgets/custom_divider.dart';
+import '../serviceprovider/domain/model/service_provider_model.dart';
+
 class AboutMeView extends StatefulWidget {
   final ServiceProviderModel model;
   const AboutMeView({super.key, required this.model});

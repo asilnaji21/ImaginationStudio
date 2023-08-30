@@ -1,5 +1,13 @@
 import 'dart:math' as math;
 
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:expansion_widget/expansion_widget.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+import '../resources/color_manager.dart';
+import '../views/serviceprovider/domain/model/service_provider_model.dart';
+
 class CustomDesignerProject extends StatelessWidget {
   const CustomDesignerProject({
     Key? key,

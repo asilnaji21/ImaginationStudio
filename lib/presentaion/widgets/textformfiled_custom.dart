@@ -10,6 +10,9 @@ class CustomTextFormField extends StatelessWidget {
   TextInputType? keyboardType;
   TextEditingController? controller;
   void Function()? onPressed;
+  String? Function(String?)? validator;
+   FocusNode? focusNode;
+    void Function()? onEditingComplete;
   CustomTextFormField({
     required this.nameText,
     this.icon,
@@ -18,35 +21,35 @@ class CustomTextFormField extends StatelessWidget {
     this.iconColor,
     this.keyboardType,
     this.onPressed,
+    this.validator,
+    this.focusNode,
+    this.onEditingComplete,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          border: Border.all(
-        color: ColorManager.borderColor,
-        width: 1,
-      )),
-      child: TextFormField(
-        controller: controller,
-        readOnly: readOnly ?? false,
-        keyboardType: keyboardType ?? TextInputType.text,
-        style: const TextStyle(fontFamily: "Arial"),
-        decoration: InputDecoration(
-          contentPadding: const EdgeInsets.only(left: 16, top: 14),
-          border: InputBorder.none,
-          suffixIcon: IconButton(
-            icon: Icon(
-              icon,
-              color: iconColor,
-            ),
-            onPressed: onPressed,
+    return TextFormField(
+       onEditingComplete: onEditingComplete,
+      validator: validator,
+      controller: controller,
+      readOnly: readOnly ?? false,
+      focusNode:focusNode ,
+      keyboardType: keyboardType ?? TextInputType.text,
+      style: const TextStyle(fontFamily: "Arial"),
+      decoration: InputDecoration(
+        contentPadding: const EdgeInsets.only(left: 16, top: 14),
+        border:const OutlineInputBorder(
+            borderSide: BorderSide(color: ColorManager.borderColor, width: 1)),
+        suffixIcon: IconButton(
+          icon: Icon(
+            icon,
+            color: iconColor,
           ),
-          hintText: nameText,
-          hintStyle: const TextStyle(fontSize: 20, fontFamily: "Aldhabi"),
+          onPressed: onPressed,
         ),
+        hintText: nameText,
+        hintStyle: const TextStyle(fontSize: 20, fontFamily: "Aldhabi"),
       ),
     );
   }

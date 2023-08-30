@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MyOrderView extends StatefulWidget {
-  const MyOrderView({Key? key}) : super(key: key);
+  MyOrderView({Key? key}) : super(key: key);
 
   @override
   _MyOrderViewState createState() => _MyOrderViewState();

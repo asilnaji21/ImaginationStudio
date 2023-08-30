@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import '../../app_provider.dart';
 import '../resources/color_manager.dart';
+import '../views/main/domain/model/product_model.dart';
 
 class CustomSavedPage extends StatefulWidget {
   final ProductModel productModel;

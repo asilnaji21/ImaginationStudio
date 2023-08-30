@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../resources/color_manager.dart';
+import '../views/serviceprovider/domain/model/service_provider_model.dart';
+
 class CustomDesignerDetailes extends StatelessWidget {
   final ServiceProviderModel model;
   const CustomDesignerDetailes({

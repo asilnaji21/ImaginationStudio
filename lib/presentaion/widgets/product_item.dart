@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import '../../app_provider.dart';
 import '../views/main/domain/model/product_model.dart';
 
 class MyGridItem extends StatefulWidget {

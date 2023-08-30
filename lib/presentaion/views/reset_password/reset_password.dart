@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:project_app/core/providerstate/firebase_auth_methods.dart';
 
 import '../../../app/routes/route_constants.dart';
 import '../../resources/color_manager.dart';
@@ -7,8 +9,26 @@ import '../../widgets/text_custom.dart';
 import '../../widgets/textformfiled_custom.dart';
 import '../signup/user_signup_view.dart';
 
-class ResetPasswordView extends StatelessWidget {
+class ResetPasswordView extends StatefulWidget {
   const ResetPasswordView({super.key});
+
+  @override
+  State<ResetPasswordView> createState() => _ResetPasswordViewState();
+}
+
+class _ResetPasswordViewState extends State<ResetPasswordView> {
+  TextEditingController _emailController = TextEditingController();
+  final FirebaseAuth auth = FirebaseAuth.instance;
+  @override
+  void initState() {
+     _emailController = TextEditingController();
+    super.initState();
+  }
+  @override
+  void dispose() {
+    _emailController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +54,7 @@ class ResetPasswordView extends StatelessWidget {
               ),
               CustomText(text: "Email"),
               CustomTextFormField(
+                controller: _emailController,
                 icon: Icons.email_outlined,
                 nameText: "Enter Email",
               ),
@@ -41,7 +62,9 @@ class ResetPasswordView extends StatelessWidget {
                 height: 60,
               ),
               CustomElevatedButton(
-                  onPressed: () {
+                  onPressed: () async {
+                    await FirebaseAuthMethods(auth)
+                        .sendPasswordResetEmail(email: _emailController.text, context: context);
                     Navigator.of(context)
                         .pushNamed(RouteConstants.resetPassRoute2);
                   },

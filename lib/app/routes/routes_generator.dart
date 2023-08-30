@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_app/app/routes/route_constants.dart';
+import 'package:project_app/presentaion/views/about_app/about_aoo_view.dart';
 import 'package:project_app/presentaion/views/category/category.dart';
 import 'package:project_app/presentaion/views/mycart/mycart_view.dart';
 import 'package:project_app/presentaion/views/product/product_view.dart';
@@ -10,6 +11,7 @@ import '../../presentaion/views/category/category.dart';
 import '../../presentaion/views/home/home_view.dart';
 import '../../presentaion/views/local_manufactures/local_manufactures.dart';
 import '../../presentaion/views/main/main_view.dart';
+import '../../presentaion/views/my_project/my_project.dart';
 import '../../presentaion/views/mycart/mycart_view.dart';
 import '../../presentaion/views/product/product_view.dart';
 import '../../presentaion/views/profile/edit_informatio.dart';
@@ -20,7 +22,9 @@ import '../../presentaion/views/reset_password/reset_password.dart';
 import '../../presentaion/views/saved/saved_view.dart';
 import '../../presentaion/views/serviceprovider/contact_service_provider.dart';
 import '../../presentaion/views/signin/signin_view.dart';
+import '../../presentaion/views/signup/signup_view.dart';
 import '../../presentaion/views/signup/user_signup_view.dart';
+import '../../presentaion/views/upload_project/upload_project.dart';
 import '../../presentaion/views/welcome/welcome_view.dart';
 import 'route_constants.dart';
 
@@ -87,7 +91,7 @@ class RouteGenerator {
         );
       case RouteConstants.myOrderRoute:
         return MaterialPageRoute(
-          builder: (context) => const MyOrderView(),
+          builder: (context) => MyOrderView(),
         );
       case RouteConstants.editInformationRoute:
         return MaterialPageRoute(
@@ -95,19 +99,19 @@ class RouteGenerator {
         );
       case RouteConstants.serviceProviderRoute:
         return MaterialPageRoute(
-          builder: (context) => const ServiceProvider(),
+          builder: (context) => ServiceProvider(),
         );
       case RouteConstants.abouteTheAppView:
         return MaterialPageRoute(
-          builder: (context) => const AbouteTheAppView(),
+          builder: (context) => AbouteTheAppView(),
         );
       case RouteConstants.myProjectsView:
         return MaterialPageRoute(
-          builder: (context) => const MyProjecstView(),
+          builder: (context) => MyProjecstView(), // Remove 'const'
         );
       case RouteConstants.uploadProject:
         return MaterialPageRoute(
-          builder: (context) => const UploadProject(),
+          builder: (context) => UploadProject(), // Remove 'const'
         );
     }
 

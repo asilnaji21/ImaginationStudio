@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import '../../../app_provider.dart';
 import '../../resources/color_manager.dart';
 import '../../widgets/ColoredCircle.dart';
 import '../../widgets/CustomBoxTextFiledComment.dart';

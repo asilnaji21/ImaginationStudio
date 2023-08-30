@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:project_app/app/routes/route_constants.dart';
+import 'package:project_app/presentaion/views/My%20order/myorder.dart';
+import 'package:project_app/presentaion/views/profile/profile_view.dart';
+import 'package:project_app/presentaion/views/serviceprovider/contact_service_provider.dart';
 
 import '../home/home_view.dart';
 import '../profile/profile_view.dart';
@@ -23,9 +27,9 @@ class _MainViewState extends State<MainView> {
   static final List<Widget> _pages = <Widget>[
     const HomeView(),
     const SavedView(),
-    const MyOrderView(),
-    const ServiceProvider(),
-    const MyProfileView()
+    MyOrderView(),
+    ServiceProvider(),
+    MyProfileView()
   ];
   @override
   Widget build(BuildContext context) {

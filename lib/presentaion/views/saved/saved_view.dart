@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../../../app_provider.dart';
 import '../../widgets/CustomSavedPage.dart';
 
 class SavedView extends StatelessWidget {

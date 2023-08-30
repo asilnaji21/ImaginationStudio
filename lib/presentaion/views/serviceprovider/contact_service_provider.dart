@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
+import '../../../config/constant.dart';
 import '../../resources/color_manager.dart';
 import '../../widgets/CustomContactButton.dart';
 import '../../widgets/CustomImageStackContactServiceProvider.dart';
 import '../../widgets/search_boxCustom.dart';
+import 'domain/model/service_provider_model.dart';
 
 class ServiceProvider extends StatefulWidget {
-  const ServiceProvider({super.key});
+ ServiceProvider({super.key});
 
   @override
   State<ServiceProvider> createState() => _ServiceProviderState();
