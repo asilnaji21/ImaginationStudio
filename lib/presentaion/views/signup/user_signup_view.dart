@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:project_app/config/cache.dart';
+import 'package:project_app/presentaion/views/main/domain/model/user_model.dart';
 import 'package:project_app/presentaion/widgets/custom_logo.dart';
 
 import '../../../app/routes/route_constants.dart';
@@ -50,11 +52,19 @@ Container customBackground({required Widget child, double? top}) {
       ));
 }
 
-class UserSignUpBody extends StatelessWidget {
+class UserSignUpBody extends StatefulWidget {
   const UserSignUpBody({
     Key? key,
   }) : super(key: key);
 
+  @override
+  State<UserSignUpBody> createState() => _UserSignUpBodyState();
+}
+
+class _UserSignUpBodyState extends State<UserSignUpBody> {
+  TextEditingController _nameController = TextEditingController();
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _phoneController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -62,13 +72,16 @@ class UserSignUpBody extends StatelessWidget {
       child: Column(children: [
         const AvatarCamera(),
         const CustomText(text: "Name"),
-        const CustomTextFormField(
-            nameText: "Enter name", icon: Icons.person_outline),
+        CustomTextFormField(
+            controller: _nameController,
+            nameText: "Enter name",
+            icon: Icons.person_outline),
         const SizedBox(
           height: 18,
         ),
         const CustomText(text: "Email"),
-        const CustomTextFormField(
+        CustomTextFormField(
+          controller: _emailController,
           nameText: "Enter email",
           icon: Icons.email_outlined,
           keyboardType: TextInputType.emailAddress,
@@ -77,7 +90,8 @@ class UserSignUpBody extends StatelessWidget {
           height: 18,
         ),
         const CustomText(text: "Phone"),
-        const CustomTextFormField(
+        CustomTextFormField(
+            controller: _phoneController,
             keyboardType: TextInputType.phone,
             nameText: "+972 599999764",
             icon: Icons.phone_rounded),
@@ -105,7 +119,13 @@ class UserSignUpBody extends StatelessWidget {
           text: "Sign up",
           colortext: ColorManager.textColor,
           width: 350,
-          onPressed: () {},
+          onPressed: () {
+            CacheData().setUser(UserModel(
+                email: _emailController.text,
+                name: _nameController.text,
+                phone: _phoneController.text));
+            Navigator.of(context).pushNamed(RouteConstants.mainRoute);
+          },
           height: 50,
         ),
         const SizedBox(
