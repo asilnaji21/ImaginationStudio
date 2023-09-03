@@ -1,10 +1,25 @@
 import 'package:flutter/material.dart';
 
+import 'package:project_app/app/routes/route_constants.dart';
+import 'package:project_app/config/cache.dart';
+import 'package:project_app/presentaion/resources/color_manager.dart';
+import 'package:project_app/presentaion/views/main/domain/model/user_model.dart';
+import 'package:project_app/presentaion/widgets/elevated_button_custom.dart';
+
+
 import '../../widgets/custom_text_field_profile.dart';
 
-class EditInformationView extends StatelessWidget {
+class EditInformationView extends StatefulWidget {
   const EditInformationView({super.key});
 
+  @override
+  State<EditInformationView> createState() => _EditInformationViewState();
+}
+
+class _EditInformationViewState extends State<EditInformationView> {
+  TextEditingController _nameController = TextEditingController();
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _phoneController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
@@ -29,39 +44,64 @@ class EditInformationView extends StatelessWidget {
                 width: 15,
               ),
               Text(
+
                 'Khaled Ali',
                 style: TextStyle(
+
+                CacheData().getUser()!.name,
+                style: const TextStyle(
+
                     fontSize: 29,
                     color: Colors.black,
                     fontWeight: FontWeight.w400),
               ),
               CustomTextFieldProfile(
-                nameText: 'Khaled',
+                controller: _nameController,
+                nameText: CacheData().getUser()!.name,
               ),
               SizedBox(
                 height: 20,
               ),
-              CustomTextFieldProfile(
+              const CustomTextFieldProfile(
                 nameText: 'Ali',
               ),
               SizedBox(
                 height: 20,
               ),
               CustomTextFieldProfile(
-                nameText: '+972-1234-56789',
+                controller: _phoneController,
+                nameText: CacheData().getUser()!.phone,
               ),
               SizedBox(
                 height: 20,
               ),
               CustomTextFieldProfile(
-                nameText: 'email@gmail.com',
+                controller: _emailController,
+                nameText: CacheData().getUser()!.email,
               ),
               SizedBox(
                 height: 20,
               ),
-              CustomTextFieldProfile(
+              const CustomTextFieldProfile(
                 nameText: 'Gender',
               ),
+              const SizedBox(
+                height: 10,
+              ),
+              CustomElevatedButton(
+                color: ColorManager.primaryMainColor,
+                height: 40,
+                width: 240,
+                text: "Save",
+                colortext: Colors.white,
+                onPressed: () {
+                  CacheData().setUser(UserModel(
+                      email: _emailController.text,
+                      name: _nameController.text,
+                      phone: _phoneController.text));
+                  Navigator.of(context).pushNamed(RouteConstants.mainRoute);
+                },
+              )
             ],
           ),
         ),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../resources/color_manager.dart';
 
 class CustomTextFormField extends StatelessWidget {
+
   String? nameText;
   IconData? icon;
   Color? iconColor;
@@ -13,10 +14,22 @@ class CustomTextFormField extends StatelessWidget {
   String? Function(String?)? validator;
    FocusNode? focusNode;
     void Function()? onEditingComplete;
-  CustomTextFormField({
+
+
+  final String? nameText;
+  final IconData? icon;
+  final Color? iconColor;
+  final bool? readOnly;
+  final int? maxLines;
+  final TextInputType? keyboardType;
+  final TextEditingController? controller;
+  final void Function()? onPressed;
+  const CustomTextFormField({
+
     required this.nameText,
     this.icon,
     this.controller,
+    this.maxLines,
     this.readOnly,
     this.iconColor,
     this.keyboardType,
@@ -29,6 +42,7 @@ class CustomTextFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return TextFormField(
        onEditingComplete: onEditingComplete,
       validator: validator,
@@ -45,6 +59,7 @@ class CustomTextFormField extends StatelessWidget {
           icon: Icon(
             icon,
             color: iconColor,
+
           ),
           onPressed: onPressed,
         ),

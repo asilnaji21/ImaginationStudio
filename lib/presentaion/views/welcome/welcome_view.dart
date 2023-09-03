@@ -31,8 +31,16 @@ class WelcomeView extends StatelessWidget {
                 BaseButton(
                   buttonText: "Sign up",
                   onPressed: () {
+
                     Navigator.of(context).pushNamed(RouteConstants.userSignUpRoute);
       
+
+                    /*Navigator.pushNamed(
+                        context, RouteConstants.userSignUpRoute);*/
+            
+
+                    //  NavigationManager.pushNamed(RouteConstants.userSignUpRoute);
+
                   },
                 ),
                 const SizedBox(height: 2),

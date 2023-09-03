@@ -5,11 +5,12 @@ import 'package:project_app/presentaion/resources/color_manager.dart';
 import 'package:project_app/presentaion/widgets/elevated_button_custom.dart';
 import 'package:project_app/presentaion/widgets/custom_project.dart';
 
-import '../../../app/routes/route_constants.dart';
-import '../../../config/constant.dart';
-import '../../resources/color_manager.dart';
 
-import '../../widgets/custom_project.dart';
+
+
+
+
+
 
 class MyProjecstView extends StatefulWidget {
  MyProjecstView({super.key});

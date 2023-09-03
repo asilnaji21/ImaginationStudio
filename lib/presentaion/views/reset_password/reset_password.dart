@@ -53,7 +53,11 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
                 ),
               ),
               const CustomText(text: "Email"),
-             CustomTextFormField(
+
+
+
+              const CustomTextFormField(
+
                 icon: Icons.email_outlined,
                 nameText: "Enter Email",
               ),

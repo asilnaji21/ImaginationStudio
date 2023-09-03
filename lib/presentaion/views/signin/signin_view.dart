@@ -7,6 +7,10 @@ import 'package:project_app/presentaion/widgets/elevated_button_custom.dart';
 import 'package:provider/provider.dart';
 import '../../../app/routes/route_constants.dart';
 
+
+
+import '../../widgets/elevated_button_custom.dart';
+
 import '../../widgets/text_custom.dart';
 import '../../widgets/textformfiled_custom.dart';
 import '../signup/user_signup_view.dart';
@@ -50,6 +54,7 @@ class _SignInViewState extends State<SignInView> {
       body: customBackground(
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
+
           child: Form(
             key: _formKey,
             child: Column(
@@ -97,6 +102,7 @@ class _SignInViewState extends State<SignInView> {
                           fontSize: 25,
                           color: Colors.grey,
                         ),
+
                       ),
                     )),
                 const SizedBox(

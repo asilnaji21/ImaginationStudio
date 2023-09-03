@@ -1,11 +1,15 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:project_app/app/routes/route_constants.dart';
+import 'package:project_app/config/cache.dart';
+
 
 import 'package:project_app/core/providerstate/firebase_auth_methods.dart';
 
-import '../../../app/routes/route_constants.dart';
 
-import 'package:project_app/app/routes/route_constants.dart';
+
+
+
 
 import '../../widgets/custom_profile_button.dart';
 
@@ -23,6 +27,7 @@ class _MyProfileViewState extends State<MyProfileView> {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 50.0),
+
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -107,8 +112,4 @@ class _MyProfileViewState extends State<MyProfileView> {
               )
             ],
           ),
-        ),
-      ),
-    );
-  }
-}
+
