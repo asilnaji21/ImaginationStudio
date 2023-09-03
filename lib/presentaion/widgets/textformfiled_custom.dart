@@ -7,6 +7,7 @@ class CustomTextFormField extends StatelessWidget {
   final IconData? icon;
   final Color? iconColor;
   final bool? readOnly;
+  final int? maxLines;
   final TextInputType? keyboardType;
   final TextEditingController? controller;
   final void Function()? onPressed;
@@ -14,6 +15,7 @@ class CustomTextFormField extends StatelessWidget {
     required this.nameText,
     this.icon,
     this.controller,
+    this.maxLines,
     this.readOnly,
     this.iconColor,
     this.keyboardType,
@@ -30,6 +32,7 @@ class CustomTextFormField extends StatelessWidget {
         width: 1,
       )),
       child: TextFormField(
+        maxLines: maxLines ?? 1,
         controller: controller,
         readOnly: readOnly ?? false,
         keyboardType: keyboardType ?? TextInputType.text,
