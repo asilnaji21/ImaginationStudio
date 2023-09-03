@@ -3,6 +3,7 @@ import 'package:project_app/app/routes/route_constants.dart';
 import 'package:project_app/app_provider.dart';
 import 'package:provider/provider.dart';
 
+import '../../../app_provider.dart';
 import '../../resources/color_manager.dart';
 import '../../widgets/colored_circle.dart';
 import '../../widgets/custom_box_text_filed_comment.dart';

@@ -5,8 +5,17 @@ import 'package:project_app/presentaion/resources/color_manager.dart';
 import 'package:project_app/presentaion/widgets/elevated_button_custom.dart';
 import 'package:project_app/presentaion/widgets/custom_project.dart';
 
+
+
+
+
+
+
+
 class MyProjecstView extends StatefulWidget {
-  const MyProjecstView({super.key});
+ MyProjecstView({super.key});
+
+
 
   @override
   State<MyProjecstView> createState() => _MyProjecstView();

@@ -8,7 +8,7 @@ import 'package:project_app/presentaion/widgets/custom_text_field_profile.dart';
 import 'package:project_app/presentaion/widgets/elevated_button_custom.dart';
 
 class UploadProject extends StatefulWidget {
-  const UploadProject({super.key});
+  UploadProject({super.key});
 
   @override
   State<UploadProject> createState() => _UploadProjectState();

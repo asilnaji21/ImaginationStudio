@@ -1,5 +1,7 @@
+
 import 'package:flutter/material.dart';
-import 'package:project_app/app/routes/route_constants.dart';
+
+import '../../../app/routes/route_constants.dart';
 
 import '../../widgets/custom_profile_button.dart';
 
@@ -23,8 +25,8 @@ class ProfileServiceProviderView extends StatelessWidget {
                     fontWeight: FontWeight.w400),
               ),
             ),
-            const Row(
-              children: [
+            Row(
+              children: const [
                 CircleAvatar(
                   radius: 40,
                   backgroundImage: AssetImage('assets/man.png'),

@@ -1,10 +1,14 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+
+import 'package:flutter/widgets.dart';
 import 'package:project_app/presentaion/views/serviceprovider/domain/model/service_provider_model.dart';
 import 'package:project_app/presentaion/widgets/custom_contact_button.dart';
-import 'package:project_app/presentaion/widgets/custom_star_rating.dart';
-import 'package:project_app/presentaion/widgets/custom_designer_detailes.dart';
 import 'package:project_app/presentaion/widgets/custom_divider.dart';
+import 'package:project_app/presentaion/widgets/custom_star_rating.dart';
+
+import '../../widgets/custom_designer_detailes.dart';
+
 
 class AboutMeView extends StatefulWidget {
   final ServiceProviderModel model;

@@ -7,6 +7,7 @@ import '../../resources/image_assets.dart';
 import '../../widgets/base_button.dart';
 
 class WelcomeView extends StatelessWidget {
+  
   const WelcomeView({Key? key}) : super(key: key);
 
   @override
@@ -30,12 +31,16 @@ class WelcomeView extends StatelessWidget {
                 BaseButton(
                   buttonText: "Sign up",
                   onPressed: () {
+
+                    Navigator.of(context).pushNamed(RouteConstants.userSignUpRoute);
+      
+
                     /*Navigator.pushNamed(
                         context, RouteConstants.userSignUpRoute);*/
-                    Navigator.of(context)
-                        .pushNamed(RouteConstants.userSignUpRoute);
+            
 
                     //  NavigationManager.pushNamed(RouteConstants.userSignUpRoute);
+
                   },
                 ),
                 const SizedBox(height: 2),

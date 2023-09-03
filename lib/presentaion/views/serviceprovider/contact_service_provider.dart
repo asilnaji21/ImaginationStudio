@@ -6,7 +6,7 @@ import '../../widgets/custom_image_stack_contact_service_provider.dart';
 import '../../widgets/search_box_custom.dart';
 
 class ServiceProvider extends StatefulWidget {
-  const ServiceProvider({super.key});
+ ServiceProvider({super.key});
 
   @override
   State<ServiceProvider> createState() => _ServiceProviderState();

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:project_app/presentaion/views/service_provider_detailes/service_provider_detailes.dart';
 import 'package:project_app/presentaion/views/serviceprovider/domain/model/service_provider_model.dart';
 import 'package:project_app/presentaion/widgets/custom_contact_button.dart';
 
 import '../resources/color_manager.dart';
-import '../views/service_provider_detailes/service_provider_detailes.dart';
 
 class CustomImageStackContactServiceProvider extends StatelessWidget {
   final ServiceProviderModel model;

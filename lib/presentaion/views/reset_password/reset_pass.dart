@@ -1,4 +1,7 @@
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:project_app/core/providerstate/firebase_auth_methods.dart';
 
 import '../../../app/routes/route_constants.dart';
 import '../../resources/color_manager.dart';
@@ -6,9 +9,15 @@ import '../../widgets/elevated_button_custom.dart';
 import '../../widgets/text_custom.dart';
 import '../../widgets/textformfiled_custom.dart';
 
-class ResetPassView extends StatelessWidget {
+class ResetPassView extends StatefulWidget {
   const ResetPassView({super.key});
 
+  @override
+  State<ResetPassView> createState() => _ResetPassViewState();
+}
+
+class _ResetPassViewState extends State<ResetPassView> {
+    final FirebaseAuth auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +38,7 @@ class ResetPassView extends StatelessWidget {
                 height: 20,
               ),
               const CustomText(text: "Email"),
-              const CustomTextFormField(
+              CustomTextFormField(
                 icon: Icons.email_outlined,
                 nameText: "Enter Email",
               ),
@@ -37,7 +46,7 @@ class ResetPassView extends StatelessWidget {
                 height: 18,
               ),
               const CustomText(text: "Password"),
-              const CustomTextFormField(
+               CustomTextFormField(
                   keyboardType: TextInputType.visiblePassword,
                   nameText: "********",
                   icon: Icons.visibility_off_outlined),
@@ -45,7 +54,7 @@ class ResetPassView extends StatelessWidget {
                 height: 18,
               ),
               const CustomText(text: "Confirm Password"),
-              const CustomTextFormField(
+              CustomTextFormField(
                   keyboardType: TextInputType.visiblePassword,
                   nameText: "********",
                   icon: Icons.visibility_off_outlined),
@@ -54,6 +63,7 @@ class ResetPassView extends StatelessWidget {
               ),
               CustomElevatedButton(
                 onPressed: () {
+           
                   Navigator.of(context).pushNamed(RouteConstants.signInRoute);
                 },
                 width: 300,
