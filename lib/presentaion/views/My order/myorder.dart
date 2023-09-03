@@ -54,6 +54,15 @@ class MyOrderViewState extends State<MyOrderView> {
                 },
               ),
             ),
+            const SizedBox(
+              height: 200,
+            ),
+            const Center(
+              child: Text(
+                "No Item Found",
+                style: TextStyle(fontSize: 30),
+              ),
+            )
           ],
         ),
       ),
