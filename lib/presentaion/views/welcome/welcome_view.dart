@@ -32,7 +32,8 @@ class WelcomeView extends StatelessWidget {
                   onPressed: () {
                     /*Navigator.pushNamed(
                         context, RouteConstants.userSignUpRoute);*/
-                    Navigator.of(context).pushNamed(RouteConstants.signUpRoute);
+                    Navigator.of(context)
+                        .pushNamed(RouteConstants.userSignUpRoute);
 
                     //  NavigationManager.pushNamed(RouteConstants.userSignUpRoute);
                   },
