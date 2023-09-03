@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_app/app/routes/route_constants.dart';
+import 'package:project_app/config/cache.dart';
 
 import '../../widgets/custom_profile_button.dart';
 
@@ -28,19 +29,19 @@ class _MyProfileViewState extends State<MyProfileView> {
                     fontWeight: FontWeight.w400),
               ),
             ),
-            const Row(
+            Row(
               children: [
-                CircleAvatar(
+                const CircleAvatar(
                   radius: 40,
                   backgroundImage: NetworkImage(
                       "https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80"),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 15,
                 ),
                 Text(
-                  "Khaled Ali",
-                  style: TextStyle(
+                  CacheData().getUser()!.name.toString(),
+                  style: const TextStyle(
                       fontSize: 35,
                       color: Colors.black,
                       fontWeight: FontWeight.w200),
@@ -90,7 +91,11 @@ class _MyProfileViewState extends State<MyProfileView> {
               height: 30,
             ),
             customProfileButton(
-                icon: Icons.logout, onPressed: () {}, title: "Log out"),
+                icon: Icons.logout,
+                onPressed: () {
+                  Navigator.of(context).pushNamed(RouteConstants.splashRoute);
+                },
+                title: "Log out"),
             const SizedBox(
               height: 30,
             )
