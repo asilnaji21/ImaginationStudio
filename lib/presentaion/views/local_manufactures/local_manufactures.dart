@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../../resources/color_manager.dart';
-import '../../widgets/ElevatedButton_custom.dart';
+import '../../widgets/elevated_button_custom.dart';
 import '../../widgets/text_custom.dart';
 import '../../widgets/textformfiled_custom.dart';
 import '../../widgets/wood_type_drop_dawn_menu.dart';
@@ -15,6 +16,10 @@ class LocalManufacturesRoute extends StatefulWidget {
 }
 
 class _LocalManufacturesRoute extends State<LocalManufacturesRoute> {
+  TextEditingController nameController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
+  TextEditingController lengthController = TextEditingController();
+  TextEditingController widthController = TextEditingController();
   Color selectedColor = Colors.transparent;
   TextEditingController textEditingController = TextEditingController();
   void changeColor(Color color) {
@@ -37,7 +42,7 @@ class _LocalManufacturesRoute extends State<LocalManufacturesRoute> {
             child: ColorPicker(
               pickerColor: selectedColor,
               onColorChanged: changeColor,
-              showLabel: true,
+              //  showLabel: true,
               pickerAreaHeightPercent: 0.8,
             ),
           ),
@@ -57,21 +62,52 @@ class _LocalManufacturesRoute extends State<LocalManufacturesRoute> {
     );
   }
 
+  String? imagePath = "";
+  String? imagePath2 = "";
+
+  List<String> projectPhotoURLs = [];
+
+  Future<void> _pickImage() async {
+    final picker = ImagePicker();
+    final pickedFile = await picker.pickImage(source: ImageSource.gallery);
+
+    if (pickedFile != null) {
+      imagePath = pickedFile.path;
+
+      setState(() {
+        if (pickedFile != null) {
+          imagePath = pickedFile.path;
+        } else {
+          debugPrint('No image selected.');
+        }
+        projectPhotoURLs.add(imagePath!);
+      });
+    } else {}
+  }
+
+  Future<void> _pickGalleryImage() async {
+    final picker = ImagePicker();
+    final pickedFile = await picker.pickImage(source: ImageSource.gallery);
+
+    if (pickedFile != null) {
+      imagePath2 = pickedFile.path;
+
+      setState(() {
+        if (pickedFile != null) {
+          imagePath2 = pickedFile.path;
+        } else {
+          debugPrint('No image selected.');
+        }
+        projectPhotoURLs.add(imagePath2!);
+      });
+    } else {}
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: AppBar(
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.shopping_cart,
-              color: ColorManager.borderColor,
-            ),
-          )
-        ],
-      ),
+      appBar: AppBar(),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 50.0),
@@ -85,16 +121,18 @@ class _LocalManufacturesRoute extends State<LocalManufacturesRoute> {
                     color: Colors.black,
                     fontWeight: FontWeight.w400),
               ),
-              CustomText(text: "Name"),
+              const CustomText(text: "Name"),
               CustomTextFormField(
+                controller: nameController,
                 icon: Icons.person_outline,
                 nameText: "Enter name",
               ),
               const SizedBox(
                 height: 18,
               ),
-              CustomText(text: "Phone"),
+              const CustomText(text: "Phone"),
               CustomTextFormField(
+                controller: phoneController,
                 keyboardType: TextInputType.phone,
                 icon: Icons.phone,
                 nameText: "+972-1234-56789",
@@ -102,15 +140,15 @@ class _LocalManufacturesRoute extends State<LocalManufacturesRoute> {
               const SizedBox(
                 height: 18,
               ),
-              CustomText(text: "Wood Type"),
+              const CustomText(text: "Wood Type"),
               const CustomWoodTypeDropDawnButton(),
               const SizedBox(
                 height: 18,
               ),
-              Row(
+              const Row(
                 children: [
                   CustomText(text: "Length"),
-                  const SizedBox(
+                  SizedBox(
                     width: 130,
                   ),
                   CustomText(text: "Width"),
@@ -120,6 +158,7 @@ class _LocalManufacturesRoute extends State<LocalManufacturesRoute> {
                 children: [
                   Expanded(
                     child: CustomTextFormField(
+                      controller: lengthController,
                       keyboardType: TextInputType.number,
                       nameText: "Enter length",
                     ),
@@ -135,6 +174,7 @@ class _LocalManufacturesRoute extends State<LocalManufacturesRoute> {
                   ),
                   Expanded(
                     child: CustomTextFormField(
+                      controller: widthController,
                       keyboardType: TextInputType.number,
                       nameText: "Enter width",
                     ),
@@ -144,7 +184,7 @@ class _LocalManufacturesRoute extends State<LocalManufacturesRoute> {
               const SizedBox(
                 height: 18,
               ),
-              CustomText(text: "Color"),
+              const CustomText(text: "Color"),
               CustomTextFormField(
                 controller: textEditingController,
                 onPressed: openColorPickerDialog,
@@ -156,18 +196,62 @@ class _LocalManufacturesRoute extends State<LocalManufacturesRoute> {
               const SizedBox(
                 height: 18,
               ),
-              CustomText(text: "Upload image"),
-              CustomTextFormField(
-                icon: Icons.drive_folder_upload,
-                nameText: "",
+              const CustomText(text: "Upload image"),
+              OutlinedButton(
+                onPressed: _pickImage,
+                style: OutlinedButton.styleFrom(
+                  maximumSize: const Size(300, 55),
+                  padding: const EdgeInsets.only(left: 10, top: 5, right: 10),
+                  side: const BorderSide(
+                      color: ColorManager.borderColor), // تخصيص لون الحدود
+                ),
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "        ",
+                      style: TextStyle(
+                          fontSize: 29,
+                          fontFamily: "Aldhabi",
+                          color: ColorManager.blackColor,
+                          fontWeight: FontWeight.w400),
+                    ),
+                    Icon(
+                      Icons.drive_folder_upload,
+                      color: ColorManager.textColor2,
+                    )
+                  ],
+                ),
               ),
               const SizedBox(
                 height: 18,
               ),
-              CustomText(text: "Upload gallery"),
-              CustomTextFormField(
-                icon: Icons.drive_folder_upload,
-                nameText: "",
+              const CustomText(text: "Upload gallery"),
+              OutlinedButton(
+                onPressed: _pickGalleryImage,
+                style: OutlinedButton.styleFrom(
+                  maximumSize: const Size(300, 55),
+                  padding: const EdgeInsets.only(left: 10, top: 5, right: 10),
+                  side: const BorderSide(
+                      color: ColorManager.borderColor), // تخصيص لون الحدود
+                ),
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "        ",
+                      style: TextStyle(
+                          fontSize: 29,
+                          fontFamily: "Aldhabi",
+                          color: ColorManager.blackColor,
+                          fontWeight: FontWeight.w400),
+                    ),
+                    Icon(
+                      Icons.drive_folder_upload,
+                      color: ColorManager.textColor2,
+                    )
+                  ],
+                ),
               ),
               const SizedBox(
                 height: 30,
@@ -181,7 +265,49 @@ class _LocalManufacturesRoute extends State<LocalManufacturesRoute> {
                     child: CustomElevatedButton(
                         height: 8,
                         width: 90,
-                        onPressed: () {},
+                        onPressed: () {
+                          if (nameController.text.isEmpty ||
+                              phoneController.text.isEmpty ||
+                              lengthController.text.isEmpty ||
+                              widthController.text.isEmpty ||
+                              textEditingController.text.isEmpty ||
+                              imagePath == "" ||
+                              imagePath2 == "" ||
+                              projectPhotoURLs.isEmpty) {
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title: const Text(
+                                    "Error",
+                                    style: TextStyle(
+                                        color: Colors.red, fontSize: 25),
+                                  ),
+                                  content: const Text(
+                                    "Please fill in all input fields.",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 28),
+                                  ),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                      child: const Text(
+                                        "OK",
+                                        style: TextStyle(fontSize: 25),
+                                      ),
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                          } else {
+                            setState(() {});
+                            Navigator.pop(context);
+                          }
+                        },
                         color: ColorManager.primaryMainColor,
                         text: "OK",
                         fontSize: 20,

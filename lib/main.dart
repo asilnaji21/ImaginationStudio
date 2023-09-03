@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:project_app/core/providerstate/firebase_auth_methods.dart';
 import 'package:project_app/firebase_options.dart';
 import 'package:provider/provider.dart';
+import 'package:project_app/app_provider.dart';
+import 'package:provider/provider.dart';
 import 'app/routes/route_constants.dart';
 import 'app/routes/routes_generator.dart';
 import 'app_provider.dart';

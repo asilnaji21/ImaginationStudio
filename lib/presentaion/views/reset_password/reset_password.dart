@@ -4,7 +4,7 @@ import 'package:project_app/core/providerstate/firebase_auth_methods.dart';
 
 import '../../../app/routes/route_constants.dart';
 import '../../resources/color_manager.dart';
-import '../../widgets/ElevatedButton_custom.dart';
+import '../../widgets/elevated_button_custom.dart';
 import '../../widgets/text_custom.dart';
 import '../../widgets/textformfiled_custom.dart';
 import '../signup/user_signup_view.dart';
@@ -52,9 +52,8 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
                   fontSize: 30,
                 ),
               ),
-              CustomText(text: "Email"),
-              CustomTextFormField(
-                controller: _emailController,
+              const CustomText(text: "Email"),
+             CustomTextFormField(
                 icon: Icons.email_outlined,
                 nameText: "Enter Email",
               ),

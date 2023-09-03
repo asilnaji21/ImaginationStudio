@@ -4,13 +4,13 @@ class MyImageCarousel extends StatefulWidget {
   const MyImageCarousel({super.key});
 
   @override
-  _MyImageCarouselState createState() => _MyImageCarouselState();
+  MyImageCarouselState createState() => MyImageCarouselState();
 }
 
-class _MyImageCarouselState extends State<MyImageCarousel> {
-  PageController _pageController = PageController(initialPage: 0);
+class MyImageCarouselState extends State<MyImageCarousel> {
+  final PageController _pageController = PageController(initialPage: 0);
   int _currentPage = 0;
-  List<String> _images = [
+  final List<String> _images = [
     'assets/conrnar.jpg',
     'assets/download.jpg',
     'assets/sign.jpg',
@@ -26,7 +26,7 @@ class _MyImageCarouselState extends State<MyImageCarousel> {
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        Container(
+        SizedBox(
           // Wrap PageView.builder with Container
           height: 250, // Set the height as per your requirement
           child: PageView.builder(
@@ -58,24 +58,24 @@ class _MyImageCarouselState extends State<MyImageCarousel> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               IconButton(
-                icon: Icon(
+                icon: const Icon(
                   Icons.arrow_circle_left_outlined,
                 ),
                 onPressed: () {
                   if (_currentPage > 0) {
                     _pageController.previousPage(
-                      duration: Duration(milliseconds: 300),
+                      duration: const Duration(milliseconds: 300),
                       curve: Curves.easeInOut,
                     );
                   }
                 },
               ),
               IconButton(
-                icon: Icon(Icons.arrow_circle_right_outlined),
+                icon: const Icon(Icons.arrow_circle_right_outlined),
                 onPressed: () {
                   if (_currentPage < _images.length - 1) {
                     _pageController.nextPage(
-                      duration: Duration(milliseconds: 300),
+                      duration: const Duration(milliseconds: 300),
                       curve: Curves.easeInOut,
                     );
                   }

@@ -1,9 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
 import 'package:project_app/core/providerstate/firebase_auth_methods.dart';
 
 import '../../../app/routes/route_constants.dart';
-import '../../widgets/customProfileButton.dart';
+
+import 'package:project_app/app/routes/route_constants.dart';
+
+import '../../widgets/custom_profile_button.dart';
 
 class MyProfileView extends StatefulWidget {
   const MyProfileView({super.key});

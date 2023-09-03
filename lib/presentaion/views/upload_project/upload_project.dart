@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-
-import '../../../app/routes/route_constants.dart';
-import '../../../config/constant.dart';
-import '../../resources/color_manager.dart';
-import '../../widgets/CustomTextFieldProfile.dart';
-import '../../widgets/ElevatedButton_custom.dart';
-import '../serviceprovider/domain/model/service_provider_model.dart';
+import 'package:project_app/app/routes/route_constants.dart';
+import 'package:project_app/config/constant.dart';
+import 'package:project_app/presentaion/resources/color_manager.dart';
+import 'package:project_app/presentaion/views/serviceprovider/domain/model/service_provider_model.dart';
+import 'package:project_app/presentaion/widgets/custom_text_field_profile.dart';
+import 'package:project_app/presentaion/widgets/elevated_button_custom.dart';
 
 class UploadProject extends StatefulWidget {
   UploadProject({super.key});
@@ -35,7 +34,7 @@ class _UploadProjectState extends State<UploadProject> {
         if (pickedFile != null) {
           imagePath = pickedFile.path;
         } else {
-          print('No image selected.');
+          debugPrint('No image selected.');
         }
         projectPhotoURLs.add(imagePath!);
       });
@@ -107,9 +106,9 @@ class _UploadProjectState extends State<UploadProject> {
                       BorderRadius.circular(10.0), // تخصيص زاوية الحواف
                 ),
               ),
-              child: Row(
+              child: const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children: [
                   Text(
                     "Project photo",
                     style: TextStyle(

@@ -4,7 +4,7 @@ import 'package:project_app/core/providerstate/firebase_auth_methods.dart';
 
 import '../../../app/routes/route_constants.dart';
 import '../../resources/color_manager.dart';
-import '../../widgets/ElevatedButton_custom.dart';
+import '../../widgets/elevated_button_custom.dart';
 import '../../widgets/text_custom.dart';
 import '../../widgets/textformfiled_custom.dart';
 
@@ -36,7 +36,7 @@ class _ResetPassViewState extends State<ResetPassView> {
               const SizedBox(
                 height: 20,
               ),
-              CustomText(text: "Email"),
+              const CustomText(text: "Email"),
               CustomTextFormField(
                 icon: Icons.email_outlined,
                 nameText: "Enter Email",
@@ -44,15 +44,15 @@ class _ResetPassViewState extends State<ResetPassView> {
               const SizedBox(
                 height: 18,
               ),
-              CustomText(text: "Password"),
-              CustomTextFormField(
+              const CustomText(text: "Password"),
+               CustomTextFormField(
                   keyboardType: TextInputType.visiblePassword,
                   nameText: "********",
                   icon: Icons.visibility_off_outlined),
               const SizedBox(
                 height: 18,
               ),
-              CustomText(text: "Confirm Password"),
+              const CustomText(text: "Confirm Password"),
               CustomTextFormField(
                   keyboardType: TextInputType.visiblePassword,
                   nameText: "********",

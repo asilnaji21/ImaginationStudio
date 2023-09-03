@@ -103,24 +103,7 @@ Future<void> logout(BuildContext context) async {
  
 
  
-  // SIGN OUT
-  Future<void> signOut(BuildContext context) async {
-    try {
-      await _auth.signOut();
-    } on FirebaseAuthException catch (e) {
-      showSnackBar(context, e.message!);
-    }
-  }
 
-  // DELETE ACCOUNT
-  Future<void> deleteAccount(BuildContext context) async {
-    try {
-      await _auth.currentUser!.delete();
-    } on FirebaseAuthException catch (e) {
-      showSnackBar(context, e.message!);
-    
-    }
-  }
 
   
 }

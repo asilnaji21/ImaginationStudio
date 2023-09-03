@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:project_app/core/providerstate/firebase_auth_methods.dart';
 
 import 'package:project_app/presentaion/resources/color_manager.dart';
+import 'package:project_app/presentaion/widgets/elevated_button_custom.dart';
 
 import 'package:provider/provider.dart';
 import '../../../app/routes/route_constants.dart';
-import '../../widgets/ElevatedButton_custom.dart';
+
 import '../../widgets/text_custom.dart';
 import '../../widgets/textformfiled_custom.dart';
 import '../signup/user_signup_view.dart';

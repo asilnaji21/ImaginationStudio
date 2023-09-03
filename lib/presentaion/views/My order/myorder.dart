@@ -4,10 +4,10 @@ class MyOrderView extends StatefulWidget {
   MyOrderView({Key? key}) : super(key: key);
 
   @override
-  _MyOrderViewState createState() => _MyOrderViewState();
+  MyOrderViewState createState() => MyOrderViewState();
 }
 
-class _MyOrderViewState extends State<MyOrderView> {
+class MyOrderViewState extends State<MyOrderView> {
   String selectedValue = "Orders by date"; // القيمة المحددة ابتدائيًا
 
   @override
@@ -54,6 +54,15 @@ class _MyOrderViewState extends State<MyOrderView> {
                 },
               ),
             ),
+            const SizedBox(
+              height: 200,
+            ),
+            const Center(
+              child: Text(
+                "No Item Found",
+                style: TextStyle(fontSize: 30),
+              ),
+            )
           ],
         ),
       ),

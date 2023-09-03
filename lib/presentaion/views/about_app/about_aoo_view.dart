@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../widgets/contact_button.dart';
 
 class AbouteTheAppView extends StatelessWidget {
-AbouteTheAppView({super.key});
+  const AbouteTheAppView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +57,7 @@ we are a fully integrated manufacturer Established out of a desire to bring a un
               height: 10,
             ),
             ContactButton(
-              icon: Icons.phone,
+              icon: Icons.tab,
               onPressed: () {},
               title: "Whatsapp",
             )

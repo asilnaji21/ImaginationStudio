@@ -27,9 +27,9 @@ class _MainViewState extends State<MainView> {
   static final List<Widget> _pages = <Widget>[
     const HomeView(),
     const SavedView(),
-    MyOrderView(),
+   MyOrderView(),
     ServiceProvider(),
-    MyProfileView()
+    const MyProfileView()
   ];
   @override
   Widget build(BuildContext context) {

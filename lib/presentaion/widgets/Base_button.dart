@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import '../resources/color_manager.dart';
 
 class BaseButton extends StatelessWidget {
-  Color? buttonColor;
-  String buttonText;
-  double? height, width;
-  void Function()? onPressed;
-  BaseButton(
+  final Color? buttonColor;
+  final String buttonText;
+  final double? height, width;
+  final void Function()? onPressed;
+  const BaseButton(
       {Key? key,
       this.buttonColor,
       required this.buttonText,

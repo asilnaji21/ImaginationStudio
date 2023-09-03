@@ -34,7 +34,7 @@ class _CustomDropDawnButtonState extends State<CustomDropDawnButton> {
           onChanged: (String? newValue) {
             setState(() {
               _selectedValue = newValue;
-              print(newValue);
+              debugPrint(newValue);
             });
           },
           items: <String>[

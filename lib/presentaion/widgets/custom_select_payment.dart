@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 class CustomSelectPayment extends StatefulWidget {
+  const CustomSelectPayment({super.key});
+
   @override
-  _CustomSelectPaymentState createState() => _CustomSelectPaymentState();
+  CustomSelectPaymentState createState() => CustomSelectPaymentState();
 }
 
-class _CustomSelectPaymentState extends State<CustomSelectPayment> {
+class CustomSelectPaymentState extends State<CustomSelectPayment> {
   String selectedPaymentMethod = 'Cash';
 
   @override

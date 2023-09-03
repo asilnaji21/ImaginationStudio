@@ -2,11 +2,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:project_app/presentaion/resources/color_manager.dart';
 import 'package:project_app/presentaion/views/signup/user_signup_view.dart';
-import 'package:project_app/presentaion/widgets/ElevatedButton_custom.dart';
 import 'package:project_app/presentaion/widgets/textformfiled_custom.dart';
 import '../../../app/routes/route_constants.dart';
 import '../../widgets/avatar_cam.dart';
-import '../../widgets/dropDawnmenu_hidden.dart';
+import '../../widgets/drop_dawnmenu_hidden.dart';
+import '../../widgets/elevated_button_custom.dart';
 import '../../widgets/text_custom.dart';
 
 class SignUpView extends StatefulWidget {

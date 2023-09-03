@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import '../../../app/routes/route_constants.dart';
 import '../../../config/constant.dart';
 import '../../resources/color_manager.dart';
-import '../../widgets/ImageCarouselWithIndicators.dart';
-import '../../widgets/customTextCategory.dart';
-import '../../widgets/custom_baseCategory.dart';
-import '../../widgets/search_boxCustom.dart';
+import '../../widgets/Image_carousel_with_indicators.dart';
+import '../../widgets/custom_text_category.dart';
+import '../../widgets/custom_base_category.dart';
+import '../../widgets/search_box_custom.dart';
 import '../main/domain/model/categories_model.dart';
 
 class CategoryView extends StatefulWidget {
@@ -47,16 +47,18 @@ class _CategoryViewState extends State<CategoryView> {
         },
       ),
       appBar: AppBar(
-        actions: [
+        /* actions: [
           IconButton(
               onPressed: () {},
               icon: const Icon(
                 Icons.shopping_cart,
                 color: ColorManager.borderColor,
               ))
-        ],
+        ],*/
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: const Icon(Icons.arrow_back, color: ColorManager.borderColor),
         ),
       ),

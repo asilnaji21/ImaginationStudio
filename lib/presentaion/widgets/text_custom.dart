@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../resources/color_manager.dart';
 
 class CustomText extends StatelessWidget {
-  String? text;
-  CustomText({
+  final String? text;
+  const CustomText({
     required this.text,
     super.key,
   });

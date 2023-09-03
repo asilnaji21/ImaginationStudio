@@ -1,13 +1,15 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:project_app/core/providerstate/firebase_auth_methods.dart';
 import 'package:provider/provider.dart';
 
 import '../../../app/routes/route_constants.dart';
+import '../../../core/providerstate/firebase_auth_methods.dart';
 import '../../resources/color_manager.dart';
 import '../../resources/image_assets.dart';
-import '../../widgets/ElevatedButton_custom.dart';
+
 import '../../widgets/avatar_cam.dart';
+import '../../widgets/custom_logo.dart';
+import '../../widgets/elevated_button_custom.dart';
 import '../../widgets/text_custom.dart';
 import '../../widgets/textbutton_custom.dart';
 import '../../widgets/textformfiled_custom.dart';
@@ -33,17 +35,24 @@ Container customBackground({required Widget child, double? top}) {
           fit: BoxFit.fill,
         ),
       ),
-      child: Container(
-          margin: const EdgeInsets.only(top: 250),
-          decoration: const BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(40),
-              topRight: Radius.circular(40),
-            ),
+      child: Column(
+        children: [
+          const CustomLogo(),
+          Expanded(
+            child: Container(
+                //     margin: const EdgeInsets.only(top: 20),
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(40),
+                    topRight: Radius.circular(40),
+                  ),
+                ),
+                padding: EdgeInsets.only(top: top ?? 30.0, left: 50, right: 50),
+                child: child),
           ),
-          padding: EdgeInsets.only(top: top ?? 30.0, left: 50, right: 50),
-          child: child));
+        ],
+      ));
 }
 
 class UserSignUpBody extends StatefulWidget {
@@ -96,59 +105,40 @@ class _UserSignUpBodyState extends State<UserSignUpBody> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
-      child: Form(
-        key: _formKey,
-        child: Column(children: [
-          const AvatarCamera(),
-          CustomText(text: "Name"),
-          CustomTextFormField(
-            nameText: "Enter name",
-            icon: Icons.person_outline,
-            validator: (value) {
-              if (value!.isEmpty) {
-                return "Please enter your Name";
-              }
-              return null;
-            },
-            controller: _nameController,
-          ),
-          const SizedBox(
-            height: 18,
-          ),
-          CustomText(text: "Email"),
-          CustomTextFormField(
-            nameText: "Enter email",
-            icon: Icons.email_outlined,
-            keyboardType: TextInputType.emailAddress,
-            validator: (value) {
-              if (value!.isEmpty) {
-                return "Please enter your email";
-              }
-              return null;
-            },
-            controller: _emailController,
-          ),
-          const SizedBox(
-            height: 18,
-          ),
-          CustomText(text: "Phone"),
-          CustomTextFormField(
-            keyboardType: TextInputType.phone,
-            nameText: "+972 599999764",
-            icon: Icons.phone_rounded,
-            validator: (value) {
-              if (value!.isEmpty) {
-                return "Please enter your phone";
-              }
-              return null;
-            },
-            controller: _phoneController,
-          ),
-          const SizedBox(
-            height: 18,
-          ),
-          CustomText(text: "Password"),
-          CustomTextFormField(
+      child: Column(children: [
+        const AvatarCamera(),
+        CustomText(text: "Name"),
+        CustomTextFormField(nameText: "Enter name", icon: Icons.person_outline),
+        const SizedBox(
+          height: 18,
+        ),
+        CustomText(text: "Email"),
+        CustomTextFormField(
+          nameText: "Enter email",
+          icon: Icons.email_outlined,
+          keyboardType: TextInputType.emailAddress,
+        ),
+        const SizedBox(
+          height: 18,
+        ),
+        CustomText(text: "Phone"),
+        CustomTextFormField(
+          keyboardType: TextInputType.phone,
+          nameText: "+972 599999764",
+          icon: Icons.phone_rounded,
+          validator: (value) {
+            if (value!.isEmpty) {
+              return "Please enter your phone";
+            }
+            return null;
+          },
+          controller: _phoneController,
+        ),
+        const SizedBox(
+          height: 18,
+        ),
+        CustomText(text: "Password"),
+        CustomTextFormField(
             keyboardType: TextInputType.visiblePassword,
             nameText: "********",
             icon: Icons.visibility_off_outlined,
@@ -167,43 +157,32 @@ class _UserSignUpBodyState extends State<UserSignUpBody> {
           CustomTextFormField(
             keyboardType: TextInputType.visiblePassword,
             nameText: "********",
-            icon: Icons.visibility_off_outlined,
-            validator: (value) {
-              if (value!.isEmpty) {
-                return "Please enter your confirmPassword";
-              }
-              return null;
-            },
-            controller: _confirmPasswordController,
-          ),
-          const SizedBox(
-            height: 18,
-          ),
-          CustomElevatedButton(
-            color: ColorManager.primaryMainColor,
-            text: "Sign up",
-            colortext: ColorManager.textColor,
-            width: 350,
+            icon: Icons.visibility_off_outlined),
+        const SizedBox(
+          height: 18,
+        ),
+        CustomElevatedButton(
+          color: ColorManager.primaryMainColor,
+          text: "Sign up",
+          colortext: ColorManager.textColor,
+          width: 350,
+          onPressed: () {
+            if (_formKey.currentState!.validate()) {
+              signUpUser();
+              Navigator.of(context).pushNamed(RouteConstants.signInRoute);
+            }
+          },
+          height: 50,
+        ),
+        const SizedBox(
+          height: 18,
+        ),
+        CustomTextButton(
             onPressed: () {
-              if (_formKey.currentState!.validate()) {
-                signUpUser();
-                Navigator.of(context).pushNamed(RouteConstants.signInRoute);
-              }
+              Navigator.of(context).pushNamed(RouteConstants.signInRoute);
             },
-            height: 50,
-          ),
-          const SizedBox(
-            height: 18,
-          ),
-          CustomTextButton(
-              onPressed: () {
-                Navigator.of(context).pushNamed(RouteConstants.signInRoute);
-              },
-              text: "Or Sign In by")
-        ]),
-      ),
+            text: "Or Sign In by")
+      ]),
     );
   }
-
-
 }

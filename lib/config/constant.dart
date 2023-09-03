@@ -1,3 +1,5 @@
+import 'package:project_app/presentaion/views/serviceprovider/domain/model/service_provider_model.dart';
+
 
 import 'package:project_app/presentaion/views/serviceprovider/domain/model/service_provider_model.dart';
 
