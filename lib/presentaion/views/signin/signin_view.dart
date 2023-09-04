@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:project_app/config/cache.dart';
 import 'package:project_app/core/providerstate/firebase_auth_methods.dart';
-
 import 'package:project_app/presentaion/resources/color_manager.dart';
+import 'package:project_app/presentaion/views/main/domain/model/user_model.dart';
 import 'package:project_app/presentaion/widgets/elevated_button_custom.dart';
-
 import 'package:provider/provider.dart';
 import '../../../app/routes/route_constants.dart';
-
-
-
-import '../../widgets/elevated_button_custom.dart';
-
 import '../../widgets/text_custom.dart';
 import '../../widgets/textformfiled_custom.dart';
 import '../signup/user_signup_view.dart';
@@ -54,12 +49,11 @@ class _SignInViewState extends State<SignInView> {
       body: customBackground(
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
-
           child: Form(
             key: _formKey,
             child: Column(
               children: [
-                CustomText(text: "Email"),
+                const CustomText(text: "Email"),
                 CustomTextFormField(
                   icon: Icons.email_outlined,
                   nameText: "Enter Email",
@@ -74,7 +68,7 @@ class _SignInViewState extends State<SignInView> {
                 const SizedBox(
                   height: 18,
                 ),
-                CustomText(text: "Password"),
+                const CustomText(text: "Password"),
                 CustomTextFormField(
                   icon: Icons.visibility_off,
                   nameText: "*******",
@@ -102,7 +96,6 @@ class _SignInViewState extends State<SignInView> {
                           fontSize: 25,
                           color: Colors.grey,
                         ),
-
                       ),
                     )),
                 const SizedBox(
@@ -133,7 +126,7 @@ class _SignInViewState extends State<SignInView> {
                     InkWell(
                       onTap: () {
                         Navigator.of(context)
-                            .pushNamed(RouteConstants.signUpRoute);
+                            .pushNamed(RouteConstants.userSignUpRoute);
                       },
                       child: const Text(
                         "Sign up",

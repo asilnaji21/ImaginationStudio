@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../resources/color_manager.dart';
 
 class CustomTextFormField extends StatelessWidget {
-
   String? nameText;
   IconData? icon;
   Color? iconColor;
@@ -12,20 +11,12 @@ class CustomTextFormField extends StatelessWidget {
   TextEditingController? controller;
   void Function()? onPressed;
   String? Function(String?)? validator;
-   FocusNode? focusNode;
-    void Function()? onEditingComplete;
+  FocusNode? focusNode;
+  void Function()? onEditingComplete;
 
-
-  final String? nameText;
-  final IconData? icon;
-  final Color? iconColor;
-  final bool? readOnly;
   final int? maxLines;
-  final TextInputType? keyboardType;
-  final TextEditingController? controller;
-  final void Function()? onPressed;
-  const CustomTextFormField({
 
+  CustomTextFormField({
     required this.nameText,
     this.icon,
     this.controller,
@@ -42,24 +33,22 @@ class CustomTextFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return TextFormField(
-       onEditingComplete: onEditingComplete,
+      onEditingComplete: onEditingComplete,
       validator: validator,
       controller: controller,
       readOnly: readOnly ?? false,
-      focusNode:focusNode ,
+      focusNode: focusNode,
       keyboardType: keyboardType ?? TextInputType.text,
       style: const TextStyle(fontFamily: "Arial"),
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.only(left: 16, top: 14),
-        border:const OutlineInputBorder(
+        border: const OutlineInputBorder(
             borderSide: BorderSide(color: ColorManager.borderColor, width: 1)),
         suffixIcon: IconButton(
           icon: Icon(
             icon,
             color: iconColor,
-
           ),
           onPressed: onPressed,
         ),

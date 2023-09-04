@@ -1,6 +1,7 @@
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:project_app/config/cache.dart';
+import 'package:project_app/presentaion/views/main/domain/model/user_model.dart';
 import 'package:provider/provider.dart';
 
 import '../../../app/routes/route_constants.dart';
@@ -106,84 +107,141 @@ class _UserSignUpBodyState extends State<UserSignUpBody> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
-      child: Column(children: [
-        const AvatarCamera(),
-        CustomText(text: "Name"),
-        CustomTextFormField(nameText: "Enter name", icon: Icons.person_outline),
-        const SizedBox(
-          height: 18,
+      child: Form(
+        key: _formKey,
+        child: Column(
+          children: [
+            const AvatarCamera(),
+            const CustomText(text: "Name"),
+            CustomTextFormField(
+              controller: _nameController,
+              nameText: "Enter name",
+              icon: Icons.person_outline,
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return "Please enter your name";
+                }
+                return null;
+              },
+            ),
+            const SizedBox(
+              height: 18,
+            ),
+            const CustomText(text: "Email"),
+            CustomTextFormField(
+              controller: _emailController,
+              nameText: "Enter email",
+              icon: Icons.email_outlined,
+              keyboardType: TextInputType.emailAddress,
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return "Please enter your email";
+                }
+                return null;
+              },
+            ),
+            const SizedBox(
+              height: 18,
+            ),
+            const CustomText(text: "Phone"),
+            CustomTextFormField(
+              keyboardType: TextInputType.phone,
+              nameText: "+972 599999764",
+              icon: Icons.phone_rounded,
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return "Please enter your phone";
+                }
+                return null;
+              },
+              controller: _phoneController,
+            ),
+            const SizedBox(
+              height: 18,
+            ),
+            const CustomText(text: "Password"),
+            CustomTextFormField(
+              keyboardType: TextInputType.visiblePassword,
+              nameText: "********",
+              icon: Icons.visibility_off_outlined,
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return "Please enter your Password";
+                }
+                return null;
+              },
+              controller: _passwordController,
+            ),
+            const SizedBox(
+              height: 18,
+            ),
+            const CustomText(text: "Confirm Password"),
+            CustomTextFormField(
+              controller: _confirmPasswordController,
+              keyboardType: TextInputType.visiblePassword,
+              nameText: "********",
+              icon: Icons.visibility_off_outlined,
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return "Please enter your Password";
+                }
+                return null;
+              },
+            ),
+            const SizedBox(
+              height: 18,
+            ),
+            CustomElevatedButton(
+              color: ColorManager.primaryMainColor,
+              text: "Sign up",
+              colortext: ColorManager.textColor,
+              width: 350,
+              onPressed: () {
+                if (_formKey.currentState!.validate()) {
+                  signUpUser();
+                  CacheData().setUser(UserModel(
+                      email: _emailController.text,
+                      name: _nameController.text,
+                      phone: _phoneController.text));
+                  Navigator.of(context).pushNamed(RouteConstants.signInRoute);
+                }
+              },
+              height: 50,
+            ),
+            const SizedBox(
+              height: 18,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  "You have account?",
+                  style:
+                      TextStyle(fontSize: 25, color: ColorManager.textColor2),
+                ),
+                const SizedBox(
+                  width: 3,
+                ),
+                InkWell(
+                  onTap: () {
+                    Navigator.of(context).pushNamed(RouteConstants.signInRoute);
+                  },
+                  child: const Text(
+                    "Sign in",
+                    style: TextStyle(
+                        fontSize: 25,
+                        color: ColorManager.textColor2,
+                        decoration: TextDecoration.underline),
+                  ),
+                ),
+                const SizedBox(
+                  height: 155,
+                )
+              ],
+            ),
+          ],
         ),
-        CustomText(text: "Email"),
-        CustomTextFormField(
-          nameText: "Enter email",
-          icon: Icons.email_outlined,
-          keyboardType: TextInputType.emailAddress,
-        ),
-        const SizedBox(
-          height: 18,
-        ),
-        CustomText(text: "Phone"),
-        CustomTextFormField(
-          keyboardType: TextInputType.phone,
-          nameText: "+972 599999764",
-          icon: Icons.phone_rounded,
-          validator: (value) {
-            if (value!.isEmpty) {
-              return "Please enter your phone";
-            }
-            return null;
-          },
-          controller: _phoneController,
-        ),
-        const SizedBox(
-          height: 18,
-        ),
-        CustomText(text: "Password"),
-        CustomTextFormField(
-            keyboardType: TextInputType.visiblePassword,
-            nameText: "********",
-            icon: Icons.visibility_off_outlined,
-            validator: (value) {
-              if (value!.isEmpty) {
-                return "Please enter your Password";
-              }
-              return null;
-            },
-            controller: _passwordController,
-          ),
-          const SizedBox(
-            height: 18,
-          ),
-          CustomText(text: "Confirm Password"),
-          CustomTextFormField(
-            keyboardType: TextInputType.visiblePassword,
-            nameText: "********",
-            icon: Icons.visibility_off_outlined),
-        const SizedBox(
-          height: 18,
-        ),
-        CustomElevatedButton(
-          color: ColorManager.primaryMainColor,
-          text: "Sign up",
-          colortext: ColorManager.textColor,
-          width: 350,
-          onPressed: () {
-            if (_formKey.currentState!.validate()) {
-              signUpUser();
-              Navigator.of(context).pushNamed(RouteConstants.signInRoute);
-            }
-          },
-          height: 50,
-        ),
-        const SizedBox(
-          height: 18,
-        ),
-        CustomTextButton(
-            onPressed: () {
-              Navigator.of(context).pushNamed(RouteConstants.signInRoute);
-            },
-            text: "Or Sign In by")
-      ]),
+      ),
     );
   }
 }
