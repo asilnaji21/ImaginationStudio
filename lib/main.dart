@@ -6,12 +6,9 @@ import 'package:project_app/firebase_options.dart';
 import 'package:provider/provider.dart';
 
 import 'package:project_app/app_provider.dart';
-import 'package:provider/provider.dart';
 import 'app/routes/route_constants.dart';
 import 'app/routes/routes_generator.dart';
-import 'app_provider.dart';
 import 'package:firebase_core/firebase_core.dart';
-
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -47,7 +44,9 @@ class MyApp extends StatelessWidget {
           ),
           debugShowCheckedModeBanner: false,
           // home: UploadProject(),
-          initialRoute: RouteConstants.splashRoute,
+          initialRoute: FirebaseAuth.instance.currentUser != null
+              ? RouteConstants.mainRoute
+              : RouteConstants.splashRoute,
           onGenerateRoute: RouteGenerator.generateRoutes,
         ),
       ),

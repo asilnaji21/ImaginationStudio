@@ -19,11 +19,14 @@ class ResetPasswordView extends StatefulWidget {
 class _ResetPasswordViewState extends State<ResetPasswordView> {
   TextEditingController _emailController = TextEditingController();
   final FirebaseAuth auth = FirebaseAuth.instance;
+  final _formKey = GlobalKey<FormState>();
+
   @override
   void initState() {
-     _emailController = TextEditingController();
+    _emailController = TextEditingController();
     super.initState();
   }
+
   @override
   void dispose() {
     _emailController.dispose();
@@ -35,47 +38,52 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
     return Scaffold(
       body: customBackground(
         child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text(
-                "Reset your password",
-                style: TextStyle(
-                    color: ColorManager.blackColor,
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold),
-              ),
-              const Text(
-                "Request an email reset link",
-                style: TextStyle(
-                  color: ColorManager.textColor2,
-                  fontSize: 30,
+          child: Form(
+            key: _formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  "Reset your password",
+                  style: TextStyle(
+                      color: ColorManager.blackColor,
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold),
                 ),
-              ),
-              const CustomText(text: "Email"),
-
-
-
-              const CustomTextFormField(
-
-                icon: Icons.email_outlined,
-                nameText: "Enter Email",
-              ),
-              const SizedBox(
-                height: 60,
-              ),
-              CustomElevatedButton(
-                  onPressed: () async {
-                    await FirebaseAuthMethods(auth)
-                        .sendPasswordResetEmail(email: _emailController.text, context: context);
-                    Navigator.of(context)
-                        .pushNamed(RouteConstants.resetPassRoute2);
+                const Text(
+                  "Request an email reset link",
+                  style: TextStyle(
+                    color: ColorManager.textColor2,
+                    fontSize: 30,
+                  ),
+                ),
+                const CustomText(text: "Email"),
+                CustomTextFormField(
+                  icon: Icons.email_outlined,
+                  nameText: "Enter Email",
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return "Please enter your email";
+                    }
+                    return null;
                   },
-                  color: ColorManager.primaryMainColor,
-                  text: "Send link",
-                  width: 300,
-                  colortext: ColorManager.whiteColor),
-            ],
+                ),
+                const SizedBox(
+                  height: 60,
+                ),
+                CustomElevatedButton(
+                    onPressed: () async {
+                      if (_formKey.currentState!.validate()) {
+                        await FirebaseAuthMethods(auth).sendPasswordResetEmail(
+                            email: _emailController.text, context: context);
+                      }
+                    },
+                    color: ColorManager.primaryMainColor,
+                    text: "Send link",
+                    width: 300,
+                    colortext: ColorManager.whiteColor),
+              ],
+            ),
           ),
         ),
       ),
