@@ -6,7 +6,6 @@ import 'package:project_app/presentaion/resources/color_manager.dart';
 import 'package:project_app/presentaion/views/main/domain/model/user_model.dart';
 import 'package:project_app/presentaion/widgets/elevated_button_custom.dart';
 
-
 import '../../widgets/custom_text_field_profile.dart';
 
 class EditInformationView extends StatefulWidget {
@@ -22,64 +21,53 @@ class _EditInformationViewState extends State<EditInformationView> {
   TextEditingController _phoneController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 45, vertical: 33),
+        padding: const EdgeInsets.symmetric(horizontal: 45, vertical: 33),
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Text(
+              const Text(
                 "Edit Information",
                 style: TextStyle(
                     fontSize: 50,
                     color: Colors.black,
                     fontWeight: FontWeight.w400),
               ),
-              CircleAvatar(
+              const CircleAvatar(
                 radius: 40,
                 backgroundImage: NetworkImage(
                     "https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80"),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 15,
               ),
               Text(
-
-                'Khaled Ali',
-                style: TextStyle(
-
-                CacheData().getUser()!.name,
+                CacheData().getUser()?.name ?? "Sara Ali",
                 style: const TextStyle(
-
                     fontSize: 29,
                     color: Colors.black,
                     fontWeight: FontWeight.w400),
               ),
               CustomTextFieldProfile(
                 controller: _nameController,
-                nameText: CacheData().getUser()!.name,
+                nameText: CacheData().getUser()?.name ?? "Sara Ali",
               ),
-              SizedBox(
-                height: 20,
-              ),
-              const CustomTextFieldProfile(
-                nameText: 'Ali',
-              ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               CustomTextFieldProfile(
                 controller: _phoneController,
-                nameText: CacheData().getUser()!.phone,
+                nameText: CacheData().getUser()?.phone ?? "059842156",
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               CustomTextFieldProfile(
                 controller: _emailController,
-                nameText: CacheData().getUser()!.email,
+                nameText: CacheData().getUser()?.email ?? "admin@gmail.com",
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               const CustomTextFieldProfile(
