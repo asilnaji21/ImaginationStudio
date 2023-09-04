@@ -161,29 +161,27 @@ class _MyCartState extends State<MyCart> {
                     shrinkWrap: true,
                     separatorBuilder: (context, index) =>
                         const SizedBox(height: 20),
-                    itemCount: cartList
-                        .length, // استبدل itemCount بالعدد الفعلي للعناصر
+                    itemCount: cartList.length,
                     itemBuilder: (BuildContext context, int index) {
-                      // قم ببناء كل عنصر هنا
                       return CustomMycart(
                         onPressed: () {
                           Provider.of<AppProvider>(context, listen: false)
                               .removeFromCart(cartList[index]);
                         },
                         model: cartList[index],
-                      ); // استبدلها بعنصر القائمة الفعلي
+                      );
                     },
                   ),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
+                      const Text(
                         "Total cost: ",
                         style: TextStyle(fontSize: 50),
                       ),
                       Text(
-                        "\$ 30 ",
-                        style: TextStyle(fontSize: 50),
+                        " \$ ${Provider.of<AppProvider>(context).calculateTotalCost(cartList).toStringAsFixed(2)}",
+                        style: const TextStyle(fontSize: 40),
                       ),
                     ],
                   ),

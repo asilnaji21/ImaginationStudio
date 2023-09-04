@@ -56,11 +56,11 @@ class CustomMycart extends StatelessWidget {
                   Icons.add_circle_outline,
                 ),
                 onPressed: () {
-                  provider.increase(model.productId);
+                  provider.increaseQuantity(model.productId);
                 },
               ),
               Text(
-                "${Provider.of<AppProvider>(context).counter}",
+                "${model.quantity}",
                 style: const TextStyle(fontSize: 25),
               ),
               IconButton(
@@ -68,7 +68,7 @@ class CustomMycart extends StatelessWidget {
                   Icons.remove_circle_outline,
                 ),
                 onPressed: () {
-                  provider.desrease(model.productId);
+                  provider.decreaseQuantity(model.productId);
                 },
               ),
             ],
