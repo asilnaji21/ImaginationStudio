@@ -1,14 +1,13 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
-import 'package:flutter/widgets.dart';
 import 'package:project_app/presentaion/views/serviceprovider/domain/model/service_provider_model.dart';
 import 'package:project_app/presentaion/widgets/custom_contact_button.dart';
 import 'package:project_app/presentaion/widgets/custom_divider.dart';
 import 'package:project_app/presentaion/widgets/custom_star_rating.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../widgets/custom_designer_detailes.dart';
-
 
 class AboutMeView extends StatefulWidget {
   final ServiceProviderModel model;
@@ -19,6 +18,16 @@ class AboutMeView extends StatefulWidget {
 }
 
 class _AboutMeViewState extends State<AboutMeView> {
+  void _launchWebsite() async {
+    final String url =
+        'https://www.google.com'; // يمكنك تغيير هذا الرابط إلى الرابط الذي تريد
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      // يمكنك تنفيذ ما تريده هنا في حالة فشل فتح الموقع
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,22 +49,26 @@ class _AboutMeViewState extends State<AboutMeView> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.share,
                         size: 33,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 270,
                       ),
-                      Icon(
-                        Icons.language,
-                        size: 33,
-                      ),
+                      IconButton(
+                          onPressed: () {
+                            _launchWebsite(); // استدعاء الدالة لفتح موقع
+                          },
+                          icon: const Icon(
+                            Icons.language,
+                            size: 33,
+                          )),
                     ],
                   ),
                 ],
@@ -127,7 +140,9 @@ class _AboutMeViewState extends State<AboutMeView> {
             viewportFraction: 0.8, // نسبة العرض الظاهرة في الشاشة
           ),
         ),
-        const CustomContactButton(),
+        CustomContactButton(
+          phone: widget.model.phone,
+        ),
         const SizedBox(
           height: 10,
         )

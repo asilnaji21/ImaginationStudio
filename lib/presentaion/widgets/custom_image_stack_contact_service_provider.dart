@@ -88,7 +88,9 @@ class CustomImageStackContactServiceProvider extends StatelessWidget {
               ],
             ),
           ),
-          const CustomContactButton(),
+          CustomContactButton(
+            phone: model.phone,
+          ),
           /* Container(
             padding: const EdgeInsets.only(left: 50.0),
             child: Column(
