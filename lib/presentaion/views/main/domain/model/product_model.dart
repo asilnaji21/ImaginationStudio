@@ -16,6 +16,6 @@ class ProductModel {
       required this.productDescription,
       required this.productImage,
       required this.productQuantity,
-      this.quantity = 1,
+      this.quantity = 0,
       this.priceTotal = 0.0});
 }
