@@ -13,7 +13,7 @@ import 'package:project_app/presentaion/widgets/custom_project.dart';
 
 
 class MyProjecstView extends StatefulWidget {
- MyProjecstView({super.key});
+ const MyProjecstView({super.key});
 
 
 

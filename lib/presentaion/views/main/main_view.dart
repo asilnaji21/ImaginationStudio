@@ -4,11 +4,8 @@ import 'package:project_app/presentaion/views/My%20order/myorder.dart';
 
 import 'package:project_app/presentaion/views/profile/profile_view.dart';
 
-
 import 'package:project_app/presentaion/views/serviceprovider/contact_service_provider.dart';
-
 import '../home/home_view.dart';
-import '../profile/profile_view.dart';
 import '../saved/saved_view.dart';
 
 class MainView extends StatefulWidget {
@@ -30,8 +27,8 @@ class _MainViewState extends State<MainView> {
   static final List<Widget> _pages = <Widget>[
     const HomeView(),
     const SavedView(),
-   MyOrderView(),
-    ServiceProvider(),
+    const MyOrderView(),
+    const ServiceProvider(),
     const MyProfileView()
   ];
   @override

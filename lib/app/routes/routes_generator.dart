@@ -88,7 +88,7 @@ class RouteGenerator {
         );
       case RouteConstants.myOrderRoute:
         return MaterialPageRoute(
-          builder: (context) =>MyOrderView(),
+          builder: (context) =>const MyOrderView(),
         );
       case RouteConstants.editInformationRoute:
         return MaterialPageRoute(
@@ -96,19 +96,19 @@ class RouteGenerator {
         );
       case RouteConstants.serviceProviderRoute:
         return MaterialPageRoute(
-          builder: (context) =>  ServiceProvider(),
+          builder: (context) =>  const ServiceProvider(),
         );
       case RouteConstants.abouteTheAppView:
         return MaterialPageRoute(
-          builder: (context) =>  AbouteTheAppView(),
+          builder: (context) =>  const AbouteTheAppView(),
         );
       case RouteConstants.myProjectsView:
         return MaterialPageRoute(
-          builder: (context) => MyProjecstView(),
+          builder: (context) => const MyProjecstView(),
         );
       case RouteConstants.uploadProject:
         return MaterialPageRoute(
-          builder: (context) =>UploadProject(),
+          builder: (context) =>const UploadProject(),
         );
     }
 

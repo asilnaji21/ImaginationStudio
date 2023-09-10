@@ -1,11 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
-
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:project_app/app/routes/route_constants.dart';
-
-import '../../presentaion/widgets/showotpdialoag.dart';
-import '../../presentaion/widgets/showsnackbar.dart';
 
 class FirebaseAuthMethods {
   final FirebaseAuth _auth;

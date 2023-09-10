@@ -13,7 +13,6 @@ import '../../widgets/avatar_cam.dart';
 import '../../widgets/custom_logo.dart';
 import '../../widgets/elevated_button_custom.dart';
 import '../../widgets/text_custom.dart';
-import '../../widgets/textbutton_custom.dart';
 import '../../widgets/textformfiled_custom.dart';
 
 class UserSignUpView extends StatelessWidget {
