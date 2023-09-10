@@ -1,7 +1,5 @@
 import 'package:project_app/presentaion/views/serviceprovider/domain/model/service_provider_model.dart';
 
-
-
 import '../presentaion/views/main/domain/model/categories_model.dart';
 import '../presentaion/views/main/domain/model/product_model.dart';
 
@@ -15,6 +13,7 @@ class Constant {
           "https://creazilla-store.fra1.digitaloceanspaces.com/icons/7914838/woman-icon-md.png",
       name: "Sara Ali",
       phone: "+1234567890",
+      email: "sara@example.com",
       projects: [
         Project(
           projectName: "Living Room Redesign",
@@ -54,6 +53,7 @@ class Constant {
           "https://static.vecteezy.com/system/resources/previews/011/675/374/original/man-avatar-image-for-profile-png.png",
       name: "Ahmed Samir",
       phone: "+9876543210",
+      email: "ahmed@example.com",
       projects: [
         Project(
           projectName: "House hall ",
@@ -92,6 +92,7 @@ class Constant {
       image: "https://cdn-icons-png.flaticon.com/512/4128/4128253.png",
       name: "Mariam Hassan",
       phone: "+1122334455",
+      email: "Mariam@example.com",
       projects: [
         Project(
           projectName: "Luxury Villa Renovation",
@@ -131,6 +132,7 @@ class Constant {
           "https://www.shareicon.net/data/512x512/2015/09/18/103160_man_512x512.png",
       name: "Kareem Hany",
       phone: "+9988776655",
+      email: "Kareem@example.com",
       projects: [
         Project(
           projectName: "Sitting Room Makeover",
@@ -170,6 +172,7 @@ class Constant {
           "https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-Vector-No-Background.png",
       name: "Ali Kamal",
       phone: "+8877665544",
+      email: "Ali@example.com",
       projects: [
         Project(
           projectName: "Ceiling decoration",
@@ -209,6 +212,7 @@ class Constant {
           "https://cdn.icon-icons.com/icons2/3708/PNG/512/girl_female_woman_person_people_avatar_icon_230018.png",
       name: "Noura Adel",
       phone: "+6655443322",
+      email: "Noura@example.com",
       projects: [
         Project(
           projectName: "Contemporary Loft Design",

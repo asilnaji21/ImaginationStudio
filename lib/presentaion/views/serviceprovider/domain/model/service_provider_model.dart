@@ -6,6 +6,8 @@ class ServiceProviderModel {
   final double rating;
   final String website;
   final String phone;
+  final String email;
+
   final List<Project> projects;
 
   ServiceProviderModel(
@@ -16,6 +18,7 @@ class ServiceProviderModel {
       required this.rating,
       required this.website,
       required this.phone,
+      required this.email,
       required this.projects});
 }
 
