@@ -4,8 +4,10 @@ import '../resources/color_manager.dart';
 
 class CustomContainerCard extends StatelessWidget {
   final String? hintText;
+  final TextEditingController? controller;
   const CustomContainerCard({
     required this.hintText,
+    required this.controller,
     super.key,
   });
 
@@ -22,6 +24,7 @@ class CustomContainerCard extends StatelessWidget {
         ),
       ),
       child: TextFormField(
+        controller: controller,
         decoration: InputDecoration(
           contentPadding: const EdgeInsets.fromLTRB(13, 21, 241, 0),
           hintText: hintText,
