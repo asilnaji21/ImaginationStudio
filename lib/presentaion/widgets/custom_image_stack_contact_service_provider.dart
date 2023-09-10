@@ -90,6 +90,7 @@ class CustomImageStackContactServiceProvider extends StatelessWidget {
           ),
           CustomContactButton(
             phone: model.phone,
+            email: model.email,
           ),
           /* Container(
             padding: const EdgeInsets.only(left: 50.0),
