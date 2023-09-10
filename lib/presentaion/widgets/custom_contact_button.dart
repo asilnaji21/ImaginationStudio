@@ -5,32 +5,30 @@ import '../resources/color_manager.dart';
 
 class CustomContactButton extends StatelessWidget {
   String phone;
+  String email;
+
   CustomContactButton({
     required this.phone,
+    required this.email,
     super.key,
   });
 // دالة لفتح تطبيق الهاتف والاتصال برقم معين
-  void _launchPhoneCall(String phoneNumber) async {
-    final url = 'tel:$phoneNumber';
-    if (await canLaunch(url)) {
-      await launch(url);
+  Future<void> makePhoneCall(String phoneNumber, context) async {
+    if (await canLaunchUrl(
+      Uri.parse(phoneNumber),
+    )) {
+      await launchUrl(Uri.parse(phoneNumber));
     } else {
-      print("errrrrrrrrrror");
+      showCustomDialog(context, 'Something went wrong.');
     }
   }
+// دالة لفتح تطبيق البريد وارسال رسالة
 
-  void _launchEmail() async {
-    final Uri _emailLaunchUri = Uri(
-      scheme: 'mailto',
-      path: 'cs-reply@amazon.com',
-      // استبدل بهذا البريد الإلكتروني الذي تريد الارتباط به
-      queryParameters: {'subject': 'الموضوع هنا', 'body': 'الرسالة هنا'},
-    );
-    final String _emailLaunchUriString = _emailLaunchUri.toString();
-    if (await canLaunch(_emailLaunchUriString)) {
-      await launch(_emailLaunchUriString);
-    } else {
-      // يمكنك تنفيذ ما تريده هنا في حالة فشل فتح التطبيق البريدي
+  Future<void> sendAnEmail(String url, context) async {
+    try {
+      await launchUrl(Uri.parse(url));
+    } catch (ex) {
+      debugPrint(ex.toString());
     }
   }
 
@@ -43,7 +41,8 @@ class CustomContactButton extends StatelessWidget {
         children: [
           InkWell(
             onTap: () {
-              _launchEmail(); // دعوة الدالة لفتح التطبيق البريدي
+              sendAnEmail(
+                  "mailto:$email", context); // دعوة الدالة لفتح التطبيق البريدي
             },
             child: Container(
               width: 102,
@@ -81,8 +80,7 @@ class CustomContactButton extends StatelessWidget {
             ),
             child: IconButton(
               onPressed: () {
-                _launchPhoneCall(
-                    phone); // استبدل 'رقم الهاتف هنا' بالرقم الذي تريد الاتصال به
+                makePhoneCall("tel:$phone", context);
               },
               icon: const Icon(
                 Icons.phone,
@@ -94,4 +92,24 @@ class CustomContactButton extends StatelessWidget {
       ),
     );
   }
+}
+
+void showCustomDialog(context, text) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: const Text('Error'),
+        content: Text(text),
+        actions: <Widget>[
+          MaterialButton(
+            child: const Text('OK'),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
+      );
+    },
+  );
 }
