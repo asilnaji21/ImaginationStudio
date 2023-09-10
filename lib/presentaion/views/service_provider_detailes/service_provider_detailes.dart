@@ -18,13 +18,35 @@ class AboutMeView extends StatefulWidget {
 }
 
 class _AboutMeViewState extends State<AboutMeView> {
-  void _launchWebsite() async {
-    final String url =
-        'https://www.google.com'; // يمكنك تغيير هذا الرابط إلى الرابط الذي تريد
-    if (await canLaunch(url)) {
-      await launch(url);
+  void showCustomDialog(context, text) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Error'),
+          content: Text(text),
+          actions: <Widget>[
+            MaterialButton(
+              child: const Text('OK'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Future<void> openTheGoogleSite(String url, context) async {
+    if (await canLaunchUrl(
+      Uri.parse(url),
+    )) {
+      await launchUrl(Uri.parse(url),
+          //في حال كان التطبيق يدعم الويب .. يقوم بفتح الرابط داخل التطبيق مباشرة ..
+          webOnlyWindowName: "_self");
     } else {
-      // يمكنك تنفيذ ما تريده هنا في حالة فشل فتح الموقع
+      showCustomDialog(context, 'Something went wrong.');
     }
   }
 
@@ -63,7 +85,8 @@ class _AboutMeViewState extends State<AboutMeView> {
                       ),
                       IconButton(
                           onPressed: () {
-                            _launchWebsite(); // استدعاء الدالة لفتح موقع
+                            openTheGoogleSite("https://unsplash.com/",
+                                context); // استدعاء الدالة لفتح موقع
                           },
                           icon: const Icon(
                             Icons.language,
@@ -142,6 +165,7 @@ class _AboutMeViewState extends State<AboutMeView> {
         ),
         CustomContactButton(
           phone: widget.model.phone,
+          email: widget.model.email,
         ),
         const SizedBox(
           height: 10,
